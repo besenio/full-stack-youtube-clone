@@ -1,0 +1,93 @@
+.top-navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: white;
+    border-bottom: 1px solid lightgrey;
+}
+
+.top-navbar i {
+    color: rgb(104, 93, 93);
+    margin-right: 30px;
+}
+
+.top-navbar-sidebar i:hover {
+    cursor: pointer;
+}
+
+.top-navbar-splash {
+    display: flex;
+    align-items: center;
+}
+
+.top-navbar-splash > i {
+    color: red;
+    font-size: 40px;
+    margin-right: 5px;
+}
+
+.top-navbar-splash > div {
+    font-size: 17px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}
+
+.top-navbar-left {
+    display: flex;
+    align-items: center;
+}
+
+.top-navbar-center {
+    display: flex;
+    align-items: center;
+    width: 40%;
+}
+
+.top-navbar-center > input {
+    border: 1px solid lightgrey;
+    flex: 1;
+    height: 33px;
+}
+
+.top-navbar-center > input:focus {
+    outline: none !important;
+    border: 1px solid rgb(0, 110, 255);
+}
+
+.top-navbar-center i {
+    color: grey;
+    background-color: rgb(231, 228, 228);
+    border: 1px solid lightgrey;
+    height: 15px;
+    width: 50px;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.top-navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+.top-navbar-video:hover {
+    cursor: pointer;
+}
+
+.top-navbar-profile {
+    display: flex;
+    align-items: center;
+    color: rgb(0, 110, 255);
+    border: 1px solid rgb(0, 110, 255);
+    font-family: 'Roboto', sans-serif;
+    padding: 10px;
+}
+
+.top-navbar-profile i {
+    color: rgb(0, 110, 255);
+    font-size: 25px;
+    margin-right: 7px;
+}

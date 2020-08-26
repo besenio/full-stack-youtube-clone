@@ -1,0 +1,90 @@
+.side-navbar {
+    font-family: 'Roboto', sans-serif;
+    position: absolute;
+    height: 100%;
+    left: -100%;
+    top: 0;
+    bottom: 0;
+    transition: left 0.5s ease-in-out;
+    width: 400;
+    background-color: white;
+    z-index: 1002;
+    font-family: 'Roboto', sans-serif;
+    padding: 7px 0px;
+}
+
+.side-navbar-open {
+    left: 0%!important;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(32, 32, 32, 0.308);
+    z-index: 1001;
+}
+
+.side-navbar i {
+    color: rgb(104, 93, 93);
+    font-size: 20px;
+    margin-right: 20px;
+}
+
+.side-navbar > *:not(:first-child):hover {
+    background-color: lightgrey;
+}
+
+.side-navbar-top {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid lightgrey;
+}
+
+.side-navbar-menu {
+    margin: 20px 0px 20px 20px;
+}
+
+.side-navbar-top-home {
+    display: flex;
+    align-items: center;
+}
+
+.side-navbar-top-home i {
+    color: red;
+    margin-right: 5px;
+    font-size: 30px
+}
+
+.side-navbar-top-home div {
+    font-weight: bold;
+    margin-right: 75px;
+}
+
+.side-navbar-home {
+    align-items: center;
+    display: flex;
+    
+    margin: 20px;
+    border-bottom-color: 1px solid lightgrey;
+}
+
+.side-navbar-github {
+    align-items: center;
+    display: flex;
+    margin: 20px;
+}
+
+.side-navbar-linkedin {
+    align-items: center;
+    display: flex;
+    margin: 20px;
+}
+
+.side-navbar-angellist {
+    align-items: center;
+    display: flex;
+    margin: 20px;
+}

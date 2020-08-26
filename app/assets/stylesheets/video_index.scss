@@ -1,0 +1,67 @@
+.videos-index {
+    margin: 20px;
+}
+
+.videos-index h1 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    margin: 0px 0px 30px 13px;
+}
+
+.videos-all {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.video-index-item {
+    font-family: 'Roboto', sans-serif;
+    margin: 0px 17px 33px 0px;
+}
+
+.video-top {
+    display: flex;
+    align-items: center;
+    margin: 10px 0px 5px 5px;
+}
+
+.video-top i {
+    margin-right: 10px;
+    font-size: 25px;
+    color: orangered;
+}
+
+.video-top div {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.video-middle {
+    display: flex;
+    align-items: center;
+    margin-left: 40px;
+    margin-bottom: 5px;  
+}
+
+.video-middle div {
+    margin-right: 5px;
+    font-size: 14px;
+    color: grey;
+}
+
+.video-middle i {
+    color: rgb(101, 101, 214);
+    font-size: 12px
+}
+
+.video-bottom {
+    display: flex;
+    align-items: center;
+    margin-left: 40px;
+    color: grey;   
+}
+
+.video-bottom span {
+    margin-right: 5px;
+    font-size: 14px;
+}
