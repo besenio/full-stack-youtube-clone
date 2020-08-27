@@ -14,14 +14,15 @@ class VideoShow extends React.Component {
     handleSubmit() {
         <Redirect to={`/edit/${this.props.match.params.videoId}`} />
     }
-
+    
     updateVideoButton() {
         let updateButton = 
             <div className="update-button">
                 {/* <input type="submit" onClick={this.handleSubmit} value="Edit Your Video"/> */}
+                <i class="fas fa-edit"></i>
                 <Link to={`/edit/${this.props.match.params.videoId}`}>Edit Your Video</Link>
             </div>
-        console.log(this.props)
+            
         if (this.props.currentUser && this.props.video.uploader_id !== this.props.currentUser.id) {
             updateButton = <div></div>;
         }
