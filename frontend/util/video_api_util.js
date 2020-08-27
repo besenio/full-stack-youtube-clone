@@ -1,3 +1,5 @@
+import video_index_container from "../components/videos/video_index_container";
+
 export const fetchVideos = () => (
     $.ajax({
         method: 'GET',
@@ -25,8 +27,8 @@ export const createVideo = formData => (
 export const updateVideo = video => (
     $.ajax({
         method: 'PATCH',
-        url: `/api/videos/${video.id}`,
-        data: formData,
+        url: `/api/videos/${video.get('video[id]')}`,
+        data: video,
         contentType: false,
         processData: false
     })

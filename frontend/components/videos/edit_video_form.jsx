@@ -7,6 +7,8 @@ class EditVideoForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleTitleInput = this.handleTitleInput.bind(this);
         this.handleDescriptionInput = this.handleDescriptionInput.bind(this);
+        this.handleDelete = this.handleDelete.bind(this);
+        this.handleCancel = this.handleCancel.bind(this);
     }
 
     componentDidMount() {
@@ -16,6 +18,7 @@ class EditVideoForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const formData = new FormData();
+        formData.append('video[id]', this.props.match.params.videoId)
         formData.append('video[title]', this.state.title);
         formData.append('video[description]', this.state.description);
         this.props.updateVideo(formData)
@@ -30,12 +33,13 @@ class EditVideoForm extends React.Component {
         this.setState({ description: e.currentTarget.value });
     };
 
-    handleDelete() {
-
+    handleDelete(e) {
+        this.props.deleteVideo(this.props.match.params.videoId);
+        this.props.history.push('/');
     };
 
     handleCancel() {
-
+        this.props.history.push(`/videos/${this.props.video.id}`);
     };
 
     afterMount() {

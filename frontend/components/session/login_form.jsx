@@ -25,15 +25,6 @@ class LoginForm extends React.Component {
             .then(() => this.props.history.push('/'))
     }
 
-    // handleDemo(e) {
-    //     e.preventDefault();
-    //     this.props.processDemo({
-    //         email: 'tempura',
-    //         password: 'tempuraa'
-    //     })
-    //     .then(() => this.props.history.push('/'))
-    // }
-
     handleDemo() {
         e => e.preventDefault();
         this.props.processDemo({
@@ -58,7 +49,6 @@ class LoginForm extends React.Component {
     }
 
     render() {
-        console.log(this.props)
         return (
             <div>
                 <div className="login-form-page">

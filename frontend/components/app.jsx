@@ -16,8 +16,8 @@ const App = () => (
         <SideNavbarContainer />
         <Modal />
         <Route exact path="/" component={VideoIndexContainer}/>
-        <Route exact path="/edit/:videoId" component={EditVideoFormContainer}/>
         <Switch>
+            <Route exact path="/edit/:videoId" component={EditVideoFormContainer}/>
             <Route exact path="/videos/:videoId" component={VideoShowContainer} />
             <AuthRoute exact path="/login" component={LogInFormContainer} />
             <AuthRoute exact path="/signup" component={SignUpFormContainer} />

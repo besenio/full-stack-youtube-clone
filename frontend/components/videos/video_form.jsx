@@ -63,23 +63,23 @@ class VideoForm extends React.Component {
 
     render() {
         return (
-            <div className="video-form">
-                <h1>Upload videos</h1>
-                <i className="fas fa-times" onClick={this.props.closeModal}></i>
+            <div className="create-video-form">
+                <div className="create-video-form-header">
+                    <h1>Upload Video</h1>
+                    <i className="fas fa-times" onClick={this.props.closeModal}></i>
+                </div>
                 <h2>Details</h2>
-                <label>Title
-                    <input type="text" onChange={this.handleTitleInput} placeholder="Add a title that describes your video"/>
-                </label>
-                <label>Description
-                    <input type="text" onChange={this.handleDescriptionInput} placeholder="Tell viewers about your video"/>
-                </label>
-                <label>Video
-                    <input type="file" onChange={this.handleVideoFile}/>
-                </label>
-                <label>Thumbnail
-                    <input type="file" onChange={this.handleThumbnailFile}/>
-                </label>
-                <input type="submit" onClick={this.handleSubmit}/>
+                <div className="create-video-form-body">
+                    <div className="create-video-form-body-left">
+                        <input type="file" onChange={this.handleThumbnailFile}/>
+                        <input type="file" onChange={this.handleVideoFile}/>
+                    </div>
+                    <div className="create-video-form-body-left">
+                        <input type="text" onChange={this.handleTitleInput} placeholder="Add a title that describes your video"/>
+                        <textarea type="text" onChange={this.handleDescriptionInput} placeholder="Tell viewers about your video"/>
+                        <input type="submit" onClick={this.handleSubmit}/>
+                    </div>
+                </div>
             </div>
         )
     };

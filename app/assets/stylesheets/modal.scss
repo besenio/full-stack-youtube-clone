@@ -4,7 +4,7 @@
     bottom: 0;
     right: 0;
     left: 0;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.5);
     z-index: 1005;
 }
 
@@ -13,4 +13,17 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    background: white;
+}
+
+.create-video-form {
+    font-family: 'Roboto', sans-serif;
+    width: 1000px;
+    height: 700px;
+}
+
+.create-video-form-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }

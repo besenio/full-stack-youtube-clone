@@ -22,9 +22,8 @@ class Api::VideosController < ApplicationController
     end
 
     def update
-        @video = current_user.videos.find(params[:id])
-
-        if @video.update(video_params)
+        @video = current_user.videos.find_by(id: params[:id])
+        if @video && @video.update(video_params)
             render :show
         else
             render json: ['You are not the owner of this video'], status: 422
@@ -32,14 +31,14 @@ class Api::VideosController < ApplicationController
     end
 
     def destroy
-        # @video = current_user.videos.find(params[:id]
-
-        # if !current_user.id == @video.uploader_id
-        #     render json: ['You are not the owner of this video'], status: 422
-        # else
-        #     @video.destroy
-        #     render :show
-        # end
+        @video = current_user.videos.find(params[:id])
+        
+        if current_user.id != @video.uploader_id
+            render json: ['You are not the owner of this video'], status: 422
+        else
+            @video.destroy
+            render :show
+        end
     end
 
     private
