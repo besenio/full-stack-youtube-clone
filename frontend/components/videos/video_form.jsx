@@ -65,19 +65,23 @@ class VideoForm extends React.Component {
         return (
             <div className="create-video-form">
                 <div className="create-video-form-header">
-                    <h1>Upload Video</h1>
+                    <h1>UPLOAD VIDEO</h1>
                     <i className="fas fa-times" onClick={this.props.closeModal}></i>
                 </div>
                 <h2>Details</h2>
                 <div className="create-video-form-body">
                     <div className="create-video-form-body-left">
+                        <div>Thumbnail Link</div>
                         <input type="file" onChange={this.handleThumbnailFile}/>
+                        <div>Video Link</div>
                         <input type="file" onChange={this.handleVideoFile}/>
                     </div>
-                    <div className="create-video-form-body-left">
+                    <div className="create-video-form-body-right">
+                        <div>Title (Required)</div>
                         <input type="text" onChange={this.handleTitleInput} placeholder="Add a title that describes your video"/>
+                        <div>Description</div>
                         <textarea type="text" onChange={this.handleDescriptionInput} placeholder="Tell viewers about your video"/>
-                        <input type="submit" onClick={this.handleSubmit}/>
+                        <input type="submit" onClick={this.handleSubmit} value="Upload" className="create-upload-button"/>
                     </div>
                 </div>
             </div>

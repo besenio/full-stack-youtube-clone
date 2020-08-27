@@ -18,12 +18,105 @@
 
 .create-video-form {
     font-family: 'Roboto', sans-serif;
-    width: 1000px;
-    height: 700px;
+    width: 800px;
+    height: 600px;
+    margin: 30px;
 }
 
 .create-video-form-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    border-bottom: 1px solid lightgrey;
+    margin-bottom: 15px;
+    padding: 15px 0px;
+}
+
+.create-video-form-header h1 {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.create-video-form-header i {
+    font-size: 25px;
+    color: grey
+}
+
+.create-video-form h2 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.create-video-form-body {
+    display: flex;
+    align-items: center;
+}
+
+.create-video-form-body-left {
+    display: block;
+    flex: 0.4;
+}
+
+.create-video-form-body-left div {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.create-video-form-body-left input {
+    margin-bottom: 30px;
+}
+
+.create-video-form-body-right {
+    display: block;
+    flex: 0.6;
+}
+
+.create-video-form-body-right div {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.create-video-form-body-right > input {
+    margin-bottom: 20px;
+    width: 90%;
+    height: 25px;
+    border-radius: 8px;
+    border: 1px solid lightgrey;
+    padding: 10px;
+}
+
+.create-video-form-body-right > input:focus {
+    outline: none !important;
+    border: 1px solid rgb(0, 110, 255);
+}
+
+.create-video-form-body-right textarea {
+    width: 90%;
+    height: 120px;
+    border-radius: 8px;
+    border: 1px solid lightgrey;
+    padding: 10px 10px;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 20px;  
+}
+
+.create-video-form-body-right textarea:focus {
+    outline: none !important;
+    border: 1px solid rgb(0, 110, 255);
+}
+
+.create-video-form-body-right .create-upload-button {
+    cursor: pointer;
+    border: none;
+    background: rgb(0, 110, 255);
+    color: white;
+    border-radius: 3px;
+    padding: 10px 25px 25px 25px;
+    font-weight: 600;
+    width: 20%;
+}
+
+.create-video-form-body-right .create-upload-button:hover {
+    background: rgb(0, 81, 255);
 }

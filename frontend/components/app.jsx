@@ -12,7 +12,7 @@ import EditVideoFormContainer from "./videos/edit_video_form_container"
 
 const App = () => (
     <div>
-        <Route exact path="/" component={TopNavbarContainer}/>
+        <Route path="/" component={TopNavbarContainer}/>
         <SideNavbarContainer />
         <Modal />
         <Route exact path="/" component={VideoIndexContainer}/>
