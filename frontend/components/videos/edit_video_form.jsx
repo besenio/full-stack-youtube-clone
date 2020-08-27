@@ -3,8 +3,10 @@ import React from 'react';
 class EditVideoForm extends React.Component {
     constructor(props) {
         super(props);
-
-        this.state = this.props;
+        this.state = this.props.video;
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleTitleInput = this.handleTitleInput.bind(this);
+        this.handleDescriptionInput = this.handleDescriptionInput.bind(this);
     }
 
     componentDidMount() {
@@ -16,7 +18,8 @@ class EditVideoForm extends React.Component {
         const formData = new FormData();
         formData.append('video[title]', this.state.title);
         formData.append('video[description]', this.state.description);
-        this.props.updateVideo(formData);
+        this.props.updateVideo(formData)
+            .then(() => this.props.history.push(`/videos/${this.props.video.id}`));
     };
 
     handleTitleInput(e) {
@@ -27,22 +30,46 @@ class EditVideoForm extends React.Component {
         this.setState({ description: e.currentTarget.value });
     };
 
-    render() {
+    handleDelete() {
+
+    };
+
+    handleCancel() {
+
+    };
+
+    afterMount() {
         return (
             <div className="edit-video-form">
-                <h1>Update Your Video Here</h1>
-                <h2>{this.state.video.title}</h2>
-                <label>Thumbnail
-                    <input type="file" onChange={this.handleThumbnailFile}/>
-                </label>
-                <label>Title
-                    <input type="text" onChange={this.handleTitleInput} placeholder="Add a title that describes your video"/>
-                </label>
-                <label>Description
-                    <input type="text" onChange={this.handleDescriptionInput} placeholder="Tell viewers about your video"/>
-                </label>
-                <input type="submit" onClick={this.handleSubmit}/>
+                <div className="edit-video-form-header">
+                    <h1>Update Your Video Details</h1>
+                </div>
+                <div className="edit-video-form-body">
+                    <div className="edit-video-form-left">
+                        <h2>{this.props.video.title}</h2>
+                        <img src={this.props.video.thumbnailUrl} width="350" height="250" />
+                    </div>
+                    <div className="edit-video-form-right">
+                        <label className="edit-video-form-title">Title:
+                            <input type="text" onChange={this.handleTitleInput} placeholder="Add a title that describes your video"/>
+                        </label>
+                        <label className="edit-video-form-description">Description:
+                            <textarea type="text" onChange={this.handleDescriptionInput} placeholder="Tell viewers about your video"/>
+                        </label>
+                        <div className="edit-video-form-bottom-right">
+                            <input type="submit" onClick={this.handleSubmit} value="Update"></input>
+                            <input type="submit" onClick={this.handleDelete} value="Delete Video"/>
+                            <input type="submit" onClick={this.handleCancel} value="Cancel"/>
+                        </div>
+                    </div>
+                </div>
             </div>
+        )
+    }
+
+    render() {
+        return (
+            this.props.video === undefined ? null : this.afterMount()
         )
     }
 }

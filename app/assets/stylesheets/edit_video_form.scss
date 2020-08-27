@@ -1,0 +1,81 @@
+.edit-video-form {
+    margin: 50px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.edit-video-form-header {
+    margin: 0px 0px 10px 0px;
+    padding: 0px 0px 15px 0px;
+    font-size: 23px;
+    font-weight: bold;
+    color: orange;
+    border-bottom: 1px solid lightgrey;
+}
+
+.edit-video-form-body {
+    display: flex;
+}
+
+.edit-video-form-left {
+    margin: 0px 0px 15px 0px;
+}
+
+.edit-video-form-left h2 {
+    margin: 0px 0px 15px 0px;
+    font-size: 18px;
+}
+
+.edit-video-form-right {
+    margin: 33px 0px 0px 15px;
+}
+
+.edit-video-form-title input {
+    width: 100%;
+    height: 25px;
+    border-radius: 8px;
+    border: 1px solid lightgrey;
+    padding: 10px 10px;
+    margin-bottom: 12px;
+}
+
+.edit-video-form-title input:focus {
+    outline: none !important;
+    border: 1px solid rgb(0, 110, 255);
+}
+
+.edit-video-form-description textarea {
+    margin-bottom: 12px;
+}
+
+.edit-video-form-description textarea {
+    width: 100%;
+    height: 90px;
+    border-radius: 8px;
+    border: 1px solid lightgrey;
+    padding: 10px 10px;   
+}
+
+.edit-video-form-description textarea:focus {
+    outline: none !important;
+    border: 1px solid rgb(0, 110, 255);
+}
+
+.edit-video-form-bottom-right {
+    display: flex;
+    align-items: center;
+}
+
+.edit-video-form-bottom-right input {
+    cursor: pointer;
+    border: none;
+    background: rgb(0, 110, 255);
+    color: white;
+    border-radius: 3px;
+    padding: 10px 25px;
+    font-weight: 600;
+    margin-right: 10px;
+}
+
+.edit-video-form-bottom-right input:hover {
+    background: rgb(0, 81, 255);
+}
