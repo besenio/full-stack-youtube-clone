@@ -1,5 +1,6 @@
 .videos-index {
-    margin: 20px;
+    display: flex;
+    margin: 25px 10px 0px 0px;
 }
 
 .videos-index h1 {
@@ -7,6 +8,88 @@
     font-weight: bold;
     font-size: 20px;
     margin: 0px 0px 30px 13px;
+}
+
+.video-index-sidebar {
+    flex: .13;
+    margin-right: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.video-index-home {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: rgb(92, 86, 86);
+    padding: 17px 30px;
+}
+
+.video-index-home:hover {
+    background-color: lightgrey;
+}
+
+.video-index-home i {
+    font-size: 20px;
+    color: rgb(92, 86, 86);
+    margin-right: 20px;
+}
+
+.video-index-github {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: rgb(92, 86, 86);
+    padding: 17px 30px;
+}
+
+.video-index-github i {
+    font-size: 20px;
+    color: rgb(92, 86, 86);
+    margin-right: 20px;
+}
+
+.video-index-github:hover {
+    background-color: lightgrey;
+}
+
+.video-index-linkedin {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: rgb(92, 86, 86);
+    padding: 17px 30px;
+}
+
+.video-index-linkedin i {
+    font-size: 20px;
+    color: rgb(92, 86, 86);
+    margin-right: 20px;
+}
+
+.video-index-linkedin:hover {
+    background-color: lightgrey;
+}
+
+.video-index-angellist {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: rgb(92, 86, 86);
+    padding: 17px 30px;
+}
+
+.video-index-angellist i {
+    font-size: 20px;
+    color: rgb(92, 86, 86);
+    margin-right: 20px;
+}
+
+.video-index-angellist:hover {
+    background-color: lightgrey;
+}
+
+.video-index-main {
+    flex: .87;
 }
 
 .videos-all {

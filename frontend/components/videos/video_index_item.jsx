@@ -5,7 +5,7 @@ const VideoIndexItem = ({ video }) => {
     return (
         <div className="video-index-item">
             <Link to={`/videos/${video.id}`}>
-                <img src={video.thumbnailUrl} width="300" height="180" className="video-thumbnail"/>
+                <img src={video.thumbnailUrl} width="320" height="190" className="video-thumbnail"/>
                 <div className="video-top">
                     <i className="far fa-user-circle"></i>
                     <div className="video-title">{video.title}</div>
