@@ -39,7 +39,8 @@
 
 .create-video-form-header i {
     font-size: 25px;
-    color: grey
+    color: grey;
+    cursor: pointer;
 }
 
 .create-video-form h2 {
@@ -56,6 +57,11 @@
 .create-video-form-body-left {
     display: block;
     flex: 0.4;
+}
+
+.preview-thumbnail img {
+    width: 300px;
+    height: 200px;
 }
 
 .create-video-form-body-left div {

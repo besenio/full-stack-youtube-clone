@@ -1,10 +1,10 @@
 import { connect } from 'react-redux';
 import { fetchComments, createComment, deleteComment } from '../../actions/comment_actions';
 import CommentIndex from './comment_index';
-import { deleteVideo } from '../../actions/video_actions';
 
 const mSTP = state => ({
-
+    comments: Object.values(state.entities.comments),
+    currentUser: state.entities.users[state.session.id]
 });
 
 const mDTP = dispatch => ({

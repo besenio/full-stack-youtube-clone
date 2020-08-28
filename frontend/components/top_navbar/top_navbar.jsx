@@ -15,12 +15,35 @@ class TopNavbar extends React.Component {
     display() {
         return (this.props.currentUser ? (
         <div>
-            <Link className="switch-button" to="/" onClick={() => this.props.logout()}>LOGOUT</Link>
+            <div className="dropdown-greeting">Hi, {this.props.currentUser.username[0].toUpperCase()}!</div>
+            <div className="drop-down-menu">
+                {/* <a href="https://github.com/" className="side-navbar-github">
+                    <i className="fab fa-github"></i>
+                    <div>Github</div>
+                </a>
+                <a href="https://www.linkedin.com/" className="side-navbar-linkedin">
+                    <i className="fab fa-linkedin"></i>
+                    <div>LinkedIn</div>
+                </a>
+                <a href="https://angel.co/" className="side-navbar-angellist">
+                    <i className="fab fa-angellist"></i>
+                    <div>AngelList</div>
+                </a> */}
+                <Link className="drop-down-logout" to="/" onClick={() => this.props.logout()}>
+                    {/* <i class="fas fa-sign-out-alt"></i> */}
+                    <div>Sign Out?</div>
+                </Link>
+            </div>
         </div>) : (
         <div>
-            <Link className="switch-button" to="/login">SIGN IN</Link>
+            <Link className="switch-button" to="/login">
+                <i className="fas fa-user-circle"></i>
+                SIGN IN
+            </Link>
         </div>)
     )}
+
+    
 
     render() {
         return (
@@ -52,12 +75,9 @@ class TopNavbar extends React.Component {
                     <div className="top-navbar-settings">
                         <i className="fas fa-ellipsis-v"></i>
                     </div>
-                    <a href="#">
-                        <div className="top-navbar-profile">
-                            <i className="fas fa-user-circle"></i>
-                            <div>{this.display()}</div>
-                        </div>
-                    </a>
+                    <div className="top-navbar-profile">
+                        <div>{this.display()}</div>
+                    </div>
                 </div>
             </div>
         )

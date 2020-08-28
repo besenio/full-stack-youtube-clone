@@ -62,6 +62,8 @@ class VideoForm extends React.Component {
     };
 
     render() {
+        const previewThumbnail = this.state.thumbnailUrl ? <img src={this.state.thumbnailUrl} /> : null;
+
         return (
             <div className="create-video-form">
                 <div className="create-video-form-header">
@@ -73,6 +75,7 @@ class VideoForm extends React.Component {
                     <div className="create-video-form-body-left">
                         <div>Thumbnail Link</div>
                         <input type="file" onChange={this.handleThumbnailFile}/>
+                        <div className="preview-thumbnail">{previewThumbnail}</div>
                         <div>Video Link</div>
                         <input type="file" onChange={this.handleVideoFile}/>
                     </div>

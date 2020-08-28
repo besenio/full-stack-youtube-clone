@@ -1,7 +1,11 @@
+.video-show-greater {
+    margin: 20px 200px;
+    display: flex;
+}
+
 .video-show {
-    margin: 25px;
     font-family: 'Roboto', sans-serif;
-    width: 60%
+    width: 80%;
 }
 
 .video-show-video video {
@@ -71,7 +75,7 @@
 .update-button {
     font-size: 20px;
     color: rgb(101, 101, 214);
-    margin-left: 350px;
+    margin-left: 25px;
 }
 
 .update-button .fas {
@@ -83,4 +87,13 @@
 .video-show-description {
     margin-left: 60px;
     font-size: 14px;
+}
+
+.video-show-side {
+    font-family: 'Roboto', sans-serif;
+    width: 20%;
+}
+
+.video-show-side .video-index-item {
+    display: flex;
 }

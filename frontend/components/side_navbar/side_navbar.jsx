@@ -19,7 +19,7 @@ class SideNavbar extends React.Component {
                 <div className={"side-navbar "+openShow} >
                     <div className="side-navbar-top">
                         <div className="side-navbar-menu">
-                            <i className="fas fa-bars"></i>
+                            <i className="fas fa-bars" onClick={this.props.closeSide}></i>
                         </div>
                         <Link to="/" className="side-navbar-top-home">
                             <i className="fab fa-youtube"></i>
