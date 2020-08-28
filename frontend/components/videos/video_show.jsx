@@ -1,6 +1,6 @@
 import React from 'react';
 import { Redirect, Link } from 'react-router-dom';
-import VideoIndexContainer from './video_index_container';
+import VideoIndexSideContainer from './video_index_side_container';
 
 class VideoShow extends React.Component {
     constructor(props) {
@@ -69,9 +69,9 @@ class VideoShow extends React.Component {
                         <div>{this.props.video.description}</div>
                     </div>
                 </div>
-                {/* <div className="video-show-side">
-                    <VideoIndexContainer />
-                </div> */}
+                <div className="video-show-side">
+                    <VideoIndexSideContainer />
+                </div>
             </div>
         )
     }
