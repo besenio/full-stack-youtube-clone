@@ -69,9 +69,9 @@ class VideoShow extends React.Component {
                         <div>{this.props.video.description}</div>
                     </div>
                 </div>
-                <div className="video-show-side">
+                {/* <div className="video-show-side">
                     <VideoIndexContainer />
-                </div>
+                </div> */}
             </div>
         )
     }

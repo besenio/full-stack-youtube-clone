@@ -14,8 +14,8 @@ class TopNavbar extends React.Component {
 
     display() {
         return (this.props.currentUser ? (
-        <div>
-            <div className="dropdown-greeting">Hi, {this.props.currentUser.username[0].toUpperCase()}!</div>
+        <div className="signed-in-greeting">
+            <div className="dropdown-greeting">Hi, {this.props.currentUser.username[0].toUpperCase() + this.props.currentUser.username.slice(1).toLowerCase()}!</div>
             <div className="drop-down-menu">
                 {/* <a href="https://github.com/" className="side-navbar-github">
                     <i className="fab fa-github"></i>
