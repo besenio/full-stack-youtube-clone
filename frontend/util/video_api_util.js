@@ -1,5 +1,3 @@
-import video_index_container from "../components/videos/video_index_container";
-
 export const fetchVideos = () => (
     $.ajax({
         method: 'GET',
