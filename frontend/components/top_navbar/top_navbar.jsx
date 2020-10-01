@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { openModal } from '../../actions/modal_actions';
 
 class TopNavbar extends React.Component {
     constructor(props) {

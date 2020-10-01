@@ -33,10 +33,6 @@
     margin-right: 20px;
 }
 
-.side-navbar > *:not(:first-child):hover {
-    background-color: lightgrey;
-}
-
 .side-navbar-top {
     display: flex;
     align-items: center;
@@ -70,25 +66,31 @@
 .side-navbar-home {
     align-items: center;
     display: flex;
-    
-    margin: 20px;
+    padding: 20px;
     border-bottom-color: 1px solid lightgrey;
 }
 
 .side-navbar-github {
     align-items: center;
     display: flex;
-    margin: 20px;
+    padding: 20px;
 }
 
 .side-navbar-linkedin {
     align-items: center;
     display: flex;
-    margin: 20px;
+    padding: 20px;
 }
 
 .side-navbar-angellist {
     align-items: center;
     display: flex;
-    margin: 20px;
+    padding: 20px;
+}
+
+.side-navbar-home:hover,
+.side-navbar-github:hover,
+.side-navbar-linkedin:hover,
+.side-navbar-angellist:hover {
+    background-color: lightgrey;
 }
