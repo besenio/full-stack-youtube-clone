@@ -23,7 +23,9 @@ class TopNavbar extends React.Component {
     display() {
         return (this.props.currentUser ? (
         <div className="signed-in-greeting">
-            <div className="dropdown-greeting" onClick={this.handleDropdown}>{this.props.currentUser.username[0].toUpperCase()}</div>
+            <div className="dropdown-greeting" onClick={this.handleDropdown}>
+                {this.props.currentUser.username[0].toUpperCase()}
+            </div>
             <div className="drop-down-menu">
                 <ProfileDropdown
                     logout={this.props.logout}
@@ -33,7 +35,7 @@ class TopNavbar extends React.Component {
                 />
             </div>
         </div>) : (
-        <div>
+        <div className=".top-navbar-profile-signin">
             <Link className="switch-button" to="/login">
                 <i className="fas fa-user-circle"></i>
                 SIGN IN
@@ -54,7 +56,7 @@ class TopNavbar extends React.Component {
                     </Link>
                 </div>
                 <div className="top-navbar-center">
-                    <input type="text" placeholder="  Search"/>
+                    <input type="text" placeholder="Search"/>
                     <i className="fas fa-search"></i>
                 </div>
                 <div className="top-navbar-right">

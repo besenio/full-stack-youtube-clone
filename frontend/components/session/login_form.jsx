@@ -61,14 +61,14 @@ class LoginForm extends React.Component {
                         <div className="login-form-credentials">
                             <input
                                 type="text"
-                                placeholder="   Email"
+                                placeholder="Email"
                                 value={this.state.email}
                                 onChange={this.update("email")}
                             />
                             <br/>
                             <input
                                 type="password"
-                                placeholder="   Enter your password"
+                                placeholder="Enter your password"
                                 value={this.state.password}
                                 onChange={this.update("password")}
                             />

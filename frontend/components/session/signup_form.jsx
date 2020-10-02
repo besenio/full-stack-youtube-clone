@@ -53,14 +53,14 @@ class SignupForm extends React.Component {
                             <div>
                                 <input
                                     type="text"
-                                    placeholder="  Username"
+                                    placeholder="Username"
                                     value={this.state.username}
                                     onChange={this.update("username")}
                                 />
                                 <br/>
                                 <input
                                     type="text"
-                                    placeholder="  Your email address"
+                                    placeholder="Your email address"
                                     value={this.state.email}
                                     onChange={this.update("email")}
                                 />
@@ -68,7 +68,7 @@ class SignupForm extends React.Component {
                             <div>
                                 <input
                                     type="password"
-                                    placeholder="  Password"
+                                    placeholder="Password"
                                     value={this.state.password}
                                     onChange={this.update("password")}
                                 />

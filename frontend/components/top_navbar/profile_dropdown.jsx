@@ -32,34 +32,51 @@ class ProfileDropdown extends React.Component {
          show = "";
       } else {
          show = "hidden";
-      };
+      }
 
       return (
          <div className={`dropdown ${show}`}>
-            <div className="dropdown-greeting">{this.props.currentUser.username[0].toUpperCase()}</div>
-            <i class="fas fa-user-circle"></i>
-            <div>
-               {this.props.currentUser.username}
+            <div className="dropdown-user-info">
+               <div>
+                  <i class="fas fa-user-circle"></i>
+               </div>
+               <div>
+                  <div className="dropdown-user-info-username">
+                     {this.props.currentUser.username}
+                  </div>
+                  <div>
+                     {this.props.currentUser.email}
+                  </div>
+               </div>
             </div>
-            <div>
-               {this.props.currentUser.email}
+
+            <div className="dropdown-github">
+               <a href="https://github.com/" className="side-navbar-github">
+                  <i className="fab fa-github"></i>
+                  <div>Github</div>
+               </a>
             </div>
-            <a href="https://github.com/" className="side-navbar-github">
-               <i className="fab fa-github"></i>
-               <div>Github</div>
-            </a>
-            <a href="https://www.linkedin.com/" className="side-navbar-linkedin">
-               <i className="fab fa-linkedin"></i>
-               <div>LinkedIn</div>
-            </a>
-            <a href="https://angel.co/" className="side-navbar-angellist">
-               <i className="fab fa-angellist"></i>
-               <div>AngelList</div>
-            </a>
-            <Link className="drop-down-logout" to="/" onClick={() => this.props.logout()}>
-               <i className="fas fa-sign-out-alt"></i>
-               <div>Sign Out?</div>
-            </Link>
+
+            <div className="dropdown-linkedin">
+               <a href="https://www.linkedin.com/" className="side-navbar-linkedin">
+                  <i className="fab fa-linkedin"></i>
+                  <div>LinkedIn</div>
+               </a>
+            </div>
+
+            <div className="dropdown-angellist">
+               <a href="https://angel.co/" className="side-navbar-angellist">
+                  <i className="fab fa-angellist"></i>
+                  <div>AngelList</div>
+               </a>
+            </div>
+
+            <div>
+               <Link className="drop-down-logout" to="/" onClick={() => this.props.logout()}>
+                  <i className="fas fa-sign-out-alt"></i>
+                  <div>Sign Out?</div>
+               </Link>
+            </div>
          </div>
       )
    }
