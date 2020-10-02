@@ -1,37 +1,36 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import ProfileDropdown from './profile_dropdown';
 
 class TopNavbar extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            showDropdown: false
+        }
         this.submit = this.submit.bind(this);
+        this.handleDropdown = this.handleDropdown.bind(this);
     }
 
     submit() {
         this.props.openSidebar(true);
     }
 
+    handleDropdown() {
+        this.setState({ showDropdown: !this.state.showDropdown })
+    }
+
     display() {
         return (this.props.currentUser ? (
         <div className="signed-in-greeting">
-            <div className="dropdown-greeting">Hi, {this.props.currentUser.username[0].toUpperCase() + this.props.currentUser.username.slice(1).toLowerCase()}!</div>
+            <div className="dropdown-greeting" onClick={this.handleDropdown}>{this.props.currentUser.username[0].toUpperCase()}</div>
             <div className="drop-down-menu">
-                {/* <a href="https://github.com/" className="side-navbar-github">
-                    <i className="fab fa-github"></i>
-                    <div>Github</div>
-                </a>
-                <a href="https://www.linkedin.com/" className="side-navbar-linkedin">
-                    <i className="fab fa-linkedin"></i>
-                    <div>LinkedIn</div>
-                </a>
-                <a href="https://angel.co/" className="side-navbar-angellist">
-                    <i className="fab fa-angellist"></i>
-                    <div>AngelList</div>
-                </a> */}
-                <Link className="drop-down-logout" to="/" onClick={() => this.props.logout()}>
-                    {/* <i class="fas fa-sign-out-alt"></i> */}
-                    <div>Sign Out?</div>
-                </Link>
+                <ProfileDropdown
+                    logout={this.props.logout}
+                    currentUser={this.props.currentUser}
+                    handleDropdown={this.handleDropdown}
+                    showDropdown={this.state.showDropdown}
+                />
             </div>
         </div>) : (
         <div>
@@ -41,8 +40,6 @@ class TopNavbar extends React.Component {
             </Link>
         </div>)
     )}
-
-    
 
     render() {
         return (
