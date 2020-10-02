@@ -17,7 +17,7 @@ class TopNavbar extends React.Component {
     }
 
     handleDropdown() {
-        this.setState({ showDropdown: !this.state.showDropdown })
+        this.setState({ showDropdown: !this.state.showDropdown });
     }
 
     display() {
