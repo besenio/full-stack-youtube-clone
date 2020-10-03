@@ -26,11 +26,11 @@ class EditVideoForm extends React.Component {
     };
 
     handleTitleInput(e) {
-        this.setState({ title: e.currentTarget.value });
+        this.setState({ title: e.target.value });
     };
 
     handleDescriptionInput(e) {
-        this.setState({ description: e.currentTarget.value });
+        this.setState({ description: e.target.value });
     };
 
     handleDelete(e) {
@@ -42,7 +42,10 @@ class EditVideoForm extends React.Component {
         this.props.history.push(`/videos/${this.props.video.id}`);
     };
 
-    afterMount() {
+    render() {
+        if (this.props.video) {
+
+        
         return (
             <div className="edit-video-form">
                 <div className="edit-video-form-header">
@@ -55,7 +58,7 @@ class EditVideoForm extends React.Component {
                     </div>
                     <div className="edit-video-form-right">
                         <label className="edit-video-form-title">Title:
-                            <input type="text" onChange={this.handleTitleInput} placeholder="Add a title that describes your video"/>
+                            <input type="text" onChange={this.handleDescriptionInput} placeholder="Add a title that describes your video"/>
                         </label>
                         <label className="edit-video-form-description">Description:
                             <textarea type="text" onChange={this.handleDescriptionInput} placeholder="Tell viewers about your video"/>
@@ -69,13 +72,17 @@ class EditVideoForm extends React.Component {
                 </div>
             </div>
         )
+
+        } else {
+            return null;
+        }
     }
 
-    render() {
-        return (
-            this.props.video === undefined ? null : this.afterMount()
-        )
-    }
+    // render() {
+    //     return (
+    //         this.props.video === undefined ? null : this.afterMount()
+    //     )
+    // }
 }
 
 export default EditVideoForm;

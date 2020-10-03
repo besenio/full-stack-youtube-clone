@@ -13,7 +13,7 @@ class ProfileDropdown extends React.Component {
    }
 
    componentWillUnmount() {
-      document.addEventListener('click', this.handleOutClick, false);
+      document.removeEventListener('click', this.handleOutClick, false);
    }
 
    handleOutClick(e) {
@@ -38,7 +38,7 @@ class ProfileDropdown extends React.Component {
          <div className={`dropdown ${show}`}>
             <div className="dropdown-user-info">
                <div>
-                  <i class="fas fa-user-circle"></i>
+                  <i className="fas fa-user-circle"></i>
                </div>
                <div>
                   <div className="dropdown-user-info-username">
