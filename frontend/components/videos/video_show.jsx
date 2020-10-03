@@ -50,7 +50,7 @@ class VideoShow extends React.Component {
                     <div className="video-show-counts">
                         {/* placeholder, need to work on features */}
                         <div className="video-show-counts-left">
-                            <div>{Math.floor(Math.random() * 1000)} views</div>
+                            <div>{this.props.videos[this.props.match.params.videoId].views} views</div>
                             <div>{" \u2022 "}</div>
                             <div>Aug 20, 2020</div>
                         </div>
