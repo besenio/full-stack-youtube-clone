@@ -6,6 +6,7 @@ class VideoShow extends React.Component {
     constructor(props) {
         super(props);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handlePlayVideo = this.handlePlayVideo.bind(this);
     }
 
     componentDidMount() {
@@ -32,6 +33,13 @@ class VideoShow extends React.Component {
         return updateButton;
     }
 
+    handlePlayVideo() {
+        this.props.updateViews({
+            id: this.props.video.id,
+            views: this.props.video.views + 1
+        })
+    }
+
     render() {
         if (!this.props.video) return null;
 
@@ -39,7 +47,7 @@ class VideoShow extends React.Component {
             <div className="video-show-greater">
                 <div className="video-show">
                     <div className="video-show-video">
-                        <video controls width="300" height="300">
+                        <video controls width="300" height="300" onPlay={this.handlePlayVideo}>
                             <source src={this.props.videos[this.props.match.params.videoId].videoUrl} type='video/mp4' />
                         </video>
                     </div>
@@ -50,7 +58,7 @@ class VideoShow extends React.Component {
                         <div className="video-show-counts-left">
                             <div>{this.props.videos[this.props.match.params.videoId].views} views</div>
                             <div>{" \u2022 "}</div>
-                            <div>Aug 20, 2020</div>
+                            <div>{this.props.videos[this.props.match.params.videoId].publishDate}</div>
                         </div>
                         {/* <div className="video-show-counts-right">
                             <i className="fas fa-thumbs-up">10k</i>

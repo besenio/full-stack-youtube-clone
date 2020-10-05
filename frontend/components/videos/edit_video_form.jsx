@@ -26,11 +26,11 @@ class EditVideoForm extends React.Component {
     };
 
     handleTitleInput(e) {
-        this.setState({ title: e.target.value });
+        this.setState({ title: e.currentTarget.value });
     };
 
     handleDescriptionInput(e) {
-        this.setState({ description: e.target.value });
+        this.setState({ description: e.currentTarget.value });
     };
 
     handleDelete(e) {
@@ -58,7 +58,7 @@ class EditVideoForm extends React.Component {
                     </div>
                     <div className="edit-video-form-right">
                         <label className="edit-video-form-title">Title:
-                            <input type="text" onChange={this.handleDescriptionInput} placeholder="Add a title that describes your video"/>
+                            <input type="text" onChange={this.handleTitleInput} placeholder="Add a title that describes your video"/>
                         </label>
                         <label className="edit-video-form-description">Description:
                             <textarea type="text" onChange={this.handleDescriptionInput} placeholder="Tell viewers about your video"/>
@@ -77,12 +77,6 @@ class EditVideoForm extends React.Component {
             return null;
         }
     }
-
-    // render() {
-    //     return (
-    //         this.props.video === undefined ? null : this.afterMount()
-    //     )
-    // }
 }
 
 export default EditVideoForm;

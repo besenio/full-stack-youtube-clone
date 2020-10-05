@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import VideoShow from './video_show';
-import { fetchVideo, fetchVideos } from '../../actions/video_actions';
+import { fetchVideo, fetchVideos, updateViews } from '../../actions/video_actions';
 
 const mSTP = (state, ownProps) => ({
     currentUser: state.entities.users[state.session.id],
