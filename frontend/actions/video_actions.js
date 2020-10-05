@@ -57,3 +57,8 @@ export const deleteVideo = videoId => dispatch => {
         .then(() => dispatch(removeVideo(videoId)),
             errors => dispatch(receiveVideoErrors(errors)))
 };
+
+export const updateViews = video => dispatch => {
+    return VideoAPIUtil.updateViews(video)
+        .then(video => dispatch(receiveVideo(video)))
+};

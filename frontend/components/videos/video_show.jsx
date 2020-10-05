@@ -17,14 +17,15 @@ class VideoShow extends React.Component {
     }
     
     updateVideoButton() {
-        let updateButton = 
-            <div className="update-button">
-                {/* <input type="submit" onClick={this.handleSubmit} value="Edit Your Video"/> */}
-                <i className="fas fa-edit"></i>
-                <Link to={`/edit/${this.props.match.params.videoId}`}>Edit Your Video</Link>
-            </div>
+        let updateButton;
         
-        if (this.props.currentUser && (this.props.video.uploader_id !== this.props.currentUser.id)) {
+        if (this.props.currentUser && this.props.currentUser.id === this.props.video.uploader_id) {
+            updateButton = 
+                <div className="update-button">
+                    <i className="fas fa-edit"></i>
+                    <Link to={`/edit/${this.props.match.params.videoId}`}>Edit Your Video</Link>
+                </div>
+        } else {
             updateButton = <div></div>;
         }
 
@@ -32,8 +33,6 @@ class VideoShow extends React.Component {
     }
 
     render() {
-
-        console.log(this.props.video);
         if (!this.props.video) return null;
 
         return (
@@ -48,7 +47,6 @@ class VideoShow extends React.Component {
                         <div>{this.props.video.title}</div>
                     </div>
                     <div className="video-show-counts">
-                        {/* placeholder, need to work on features */}
                         <div className="video-show-counts-left">
                             <div>{this.props.videos[this.props.match.params.videoId].views} views</div>
                             <div>{" \u2022 "}</div>

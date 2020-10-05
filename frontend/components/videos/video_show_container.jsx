@@ -10,7 +10,8 @@ const mSTP = (state, ownProps) => ({
 
 const mDTP = dispatch => ({
     fetchVideo: videoId => dispatch(fetchVideo(videoId)),
-    fetchVideos: () => dispatch(fetchVideos())
+    fetchVideos: () => dispatch(fetchVideos()),
+    updateViews: video => dispatch(updateViews(video))
 });
 
 export default connect(mSTP, mDTP)(VideoShow);
