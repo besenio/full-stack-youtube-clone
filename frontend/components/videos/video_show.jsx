@@ -70,10 +70,14 @@ class VideoShow extends React.Component {
                             <div>{" \u2022 "}</div>
                             <div>{this.props.videos[this.props.match.params.videoId].publishDate}</div>
                         </div>
-                        {/* <div className="video-show-counts-right">
-                            <i className="fas fa-thumbs-up">10k</i>
-                            <i className="fas fa-thumbs-down">100</i>
-                        </div> */}
+                        <div className="video-show-counts-right">
+                            <i className="fas fa-thumbs-up">
+                                <div>10k</div>
+                            </i>
+                            <i className="fas fa-thumbs-down">
+                                <div>100</div>
+                            </i>
+                        </div>
                     </div>
                     <div className="video-show-user">
                         <i className="far fa-user-circle"></i>

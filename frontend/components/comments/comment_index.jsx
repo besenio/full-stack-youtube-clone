@@ -34,19 +34,23 @@ class CommentIndex extends React.Component {
         let userIcon;
 
         if (this.props.currentUser) {
-            userIcon = <div>{this.props.currentUser.username[0].toUpperCase()}</div>
+            userIcon = <div className="comment-profile-icon">{this.props.currentUser.username[0].toUpperCase()}</div>
         } else {
-            userIcon = <div><i className="fas fa-user-circle"></i></div>
+            userIcon = <div className="comment-profile-icon"><i className="fas fa-user-circle"></i></div>
         }
 
         return(
             <div>
                 <div className="create-comment-section">
                     {userIcon}
-                    <div>
-                        <input placeholder={`Commenting publicly as ${this.props.currentUser.username.toUpperCase()}`} onChange={this.handleInput}></input>
-                        <button onClick={this.handleComment}>CANCEL</button>
-                        <button onClick={this.handleComment}>COMMENT</button>
+                    <div className="comment-input-buttons">
+                        <div className="comment-input">
+                            <input placeholder={`Commenting publicly as ${this.props.currentUser.username.toUpperCase()}`} onChange={this.handleInput}></input>
+                        </div>
+                        <div className="comment-buttons">
+                            <button className="comment-buttons-cancel" onClick={this.handleComment}>CANCEL</button>
+                            <button className="comment-buttons-comment" onClick={this.handleComment}>COMMENT</button>
+                        </div>
                     </div>
                 </div>
                 <div className="comments-all">
