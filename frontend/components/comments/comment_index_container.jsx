@@ -1,16 +1,19 @@
 import { connect } from 'react-redux';
 import { fetchComments, createComment, deleteComment } from '../../actions/comment_actions';
 import CommentIndex from './comment_index';
+import { fetchVideo } from '../../actions/video_actions';
 
-const mSTP = state => ({
+const mSTP = (state, ownProps) => ({
     comments: Object.values(state.entities.comments),
-    currentUser: state.entities.users[state.session.id]
+    currentUser: state.entities.users[state.session.id],
+    video: ownProps.video
 });
 
 const mDTP = dispatch => ({
     fetchComments: videoId => dispatch(fetchComments(videoId)),
     createComment: comment => dispatch(createComment(comment)),
-    deleteComment: commentId => dispatch(deleteComment(commentId))
+    deleteComment: commentId => dispatch(deleteComment(commentId)),
+    fetchVideo: videoId => dispatch(fetchVideo(videoId))
 });
 
 export default connect(mSTP, mDTP)(CommentIndex);

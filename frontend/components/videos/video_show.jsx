@@ -10,7 +10,16 @@ class VideoShow extends React.Component {
     }
 
     componentDidMount() {
+        this.props.fetchVideos();
         this.props.fetchVideo(this.props.match.params.videoId);
+        window.scrollTo(0, 0);
+    }
+
+    componentDidUpdate(prevProps) {
+        if (prevProps.video && prevProps.video.id != this.props.match.params.videoId) {
+            this.props.fetchVideo(this.props.match.params.videoId);
+            window.scrollTo(0, 0);
+        }
     }
 
     handleSubmit() {
@@ -47,7 +56,7 @@ class VideoShow extends React.Component {
             <div className="video-show-greater">
                 <div className="video-show">
                     <div className="video-show-video">
-                        <video controls width="300" height="300" onPlay={this.handlePlayVideo}>
+                        <video controls width="300" height="300" onPlay={this.handlePlayVideo} key={this.props.video.videoUrl}>
                             <source src={this.props.videos[this.props.match.params.videoId].videoUrl} type='video/mp4' />
                         </video>
                     </div>
