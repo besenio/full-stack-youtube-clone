@@ -6,7 +6,8 @@ class CommentIndex extends React.Component {
         super(props);
         this.state = {
             body: "",
-            commentInput: false
+            commentInput: false,
+            hideButtons: true
         }
         this.handleInput = this.handleInput.bind(this);
         this.handleCancel = this.handleCancel.bind(this);
@@ -14,29 +15,45 @@ class CommentIndex extends React.Component {
     }
 
     handleInput(e) {
-        this.setState({ body: e.currentTarget.value })
+        this.setState({ body: e.currentTarget.value, commentInput: true });
     }
 
     handleCancel() {
-        this.setState({ body: "" })
+        this.setState({ body: "", hideButtons: true });
     }
 
     handleComment(e) {
         e.preventDefault();
         this.props.createComment({
-            author_id: this.props.currentUser.id,
+            // author_id: this.props.currentUser.id,
             video_id: this.props.video.id,
             body: this.state.body
-        })
+        }).then(() => this.props.fetchVideo(this.props.video.id))
+        this.setState({ body: "", hideButtons: true });
+    }
+
+    toggleButtons() {
+        if (this.state.hideButtons) {
+            this.setState({ hideButtons: !this.state.hideButtons });
+        }
     }
 
     render() {
         let userIcon;
+        let commentValue;
 
         if (this.props.currentUser) {
             userIcon = <div className="comment-profile-icon">{this.props.currentUser.username[0].toUpperCase()}</div>
+            commentValue = <input
+                                placeholder={`Commenting publicly as ${this.props.currentUser.username.toUpperCase()}`}
+                                onChange={this.handleInput} 
+                                onFocus={this.toggleButtons}
+                                onBlur={this.toggleButtons}
+                                value={this.state.body}>
+                            </input>
         } else {
             userIcon = <div className="comment-profile-icon"><i className="fas fa-user-circle"></i></div>
+            commentValue = <button>Add a public comment...</button>
         }
 
         return(
@@ -45,10 +62,10 @@ class CommentIndex extends React.Component {
                     {userIcon}
                     <div className="comment-input-buttons">
                         <div className="comment-input">
-                            <input placeholder={`Commenting publicly as ${this.props.currentUser.username.toUpperCase()}`} onChange={this.handleInput}></input>
+                            {commentValue}
                         </div>
                         <div className="comment-buttons">
-                            <button className="comment-buttons-cancel" onClick={this.handleComment}>CANCEL</button>
+                            <button className="comment-buttons-cancel" onClick={this.handleCancel}>CANCEL</button>
                             <button className="comment-buttons-comment" onClick={this.handleComment}>COMMENT</button>
                         </div>
                     </div>
