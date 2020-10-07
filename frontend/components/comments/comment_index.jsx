@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import CommentIndexItem from './comment_index_item';
 
 class CommentIndex extends React.Component {
@@ -13,6 +12,7 @@ class CommentIndex extends React.Component {
         this.handleInput = this.handleInput.bind(this);
         this.handleCancel = this.handleCancel.bind(this);
         this.handleComment = this.handleComment.bind(this);
+        this.toggleButtons = this.toggleButtons.bind(this);
     }
 
     handleInput(e) {
@@ -26,7 +26,6 @@ class CommentIndex extends React.Component {
     handleComment(e) {
         e.preventDefault();
         this.props.createComment({
-            // author_id: this.props.currentUser.id,
             video_id: this.props.video.id,
             body: this.state.body
         }).then(() => this.props.fetchVideo(this.props.video.id))
@@ -54,20 +53,37 @@ class CommentIndex extends React.Component {
                             </input>
         } else {
             userIcon = <div className="comment-profile-icon-02"><i className="fas fa-user-circle"></i></div>
-            commentValue = <button to="/login">Login to add a public comment...</button>
+            commentValue = <button>Login to add a public comment...</button>
+        }
+
+        let hide;
+        if (this.state.hideButtons) {
+            hide = "hidden";
+        } else {
+            hide = "";
+        }
+
+        let active;
+        if (this.state.commentInput && this.state.body !== "") {
+            active = "comment-buttons-comment-active";
+            setTimeout(() => {document.getElementById('comment-button-disable').disable = false}, 1);
+        } else {
+            active = "comment-buttons-comment";
+            setTimeout(() => { document.getElementById('comment-button-disable').disable = true }, 1);
         }
 
         return(
             <div>
+                <div className="comments-length">{this.props.comments.length} Comments</div>
                 <div className="create-comment-section">
                     {userIcon}
                     <div className="comment-input-buttons">
                         <div className="comment-input">
                             {commentValue}
                         </div>
-                        <div className="comment-buttons">
+                        <div className={`comment-buttons ${hide}`}>
                             <button className="comment-buttons-cancel" onClick={this.handleCancel}>CANCEL</button>
-                            <button className="comment-buttons-comment" onClick={this.handleComment}>COMMENT</button>
+                            <button id="comment-button-disable" className={active} onClick={this.handleComment}>COMMENT</button>
                         </div>
                     </div>
                 </div>
