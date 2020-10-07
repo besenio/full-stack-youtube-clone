@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import CommentIndexItem from './comment_index_item';
 
 class CommentIndex extends React.Component {
@@ -43,7 +44,7 @@ class CommentIndex extends React.Component {
         let commentValue;
 
         if (this.props.currentUser) {
-            userIcon = <div className="comment-profile-icon">{this.props.currentUser.username[0].toUpperCase()}</div>
+            userIcon = <div className="comment-profile-icon-01">{this.props.currentUser.username[0].toUpperCase()}</div>
             commentValue = <input
                                 placeholder={`Commenting publicly as ${this.props.currentUser.username.toUpperCase()}`}
                                 onChange={this.handleInput} 
@@ -52,8 +53,8 @@ class CommentIndex extends React.Component {
                                 value={this.state.body}>
                             </input>
         } else {
-            userIcon = <div className="comment-profile-icon"><i className="fas fa-user-circle"></i></div>
-            commentValue = <button>Add a public comment...</button>
+            userIcon = <div className="comment-profile-icon-02"><i className="fas fa-user-circle"></i></div>
+            commentValue = <button to="/login">Login to add a public comment...</button>
         }
 
         return(

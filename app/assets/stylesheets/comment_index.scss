@@ -5,7 +5,7 @@
    padding-top: 30px;
 }
 
-.comment-profile-icon {
+.comment-profile-icon-01 {
    margin: 0px 20px 0px 10px;
    border: 1px solid rgb(151, 49, 151);
    font-size: 30px;
@@ -45,13 +45,21 @@
    border: 1px solid white;
    border-bottom: 1px solid lightgrey;
    margin-bottom: 10px;
-   width: 100%;
    padding-bottom: 5px;
    text-align: left;
    color: grey;
    background-color: white;
    font-family: 'Roboto', sans-serif;
    cursor: text;
+   width: 100%;
+}
+
+.comment-profile-icon-02 {
+   font-size: 40px;
+   text-align: center;
+   padding: 5px;
+   color: rgb(0, 110, 255);
+   margin-right: 10px;
 }
 
 .comment-buttons {
