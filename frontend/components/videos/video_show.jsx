@@ -48,6 +48,7 @@ class VideoShow extends React.Component {
             id: this.props.video.id,
             views: this.props.video.views + 1
         });
+        console.log(this.props.video)
     }
 
     render() {
@@ -80,7 +81,9 @@ class VideoShow extends React.Component {
                         </div>
                     </div>
                     <div className="video-show-user">
-                        <i className="far fa-user-circle"></i>
+                        <div className="video-show-user-left">
+                            <i className="fas fa-user-circle"></i>
+                        </div>
                         <div>{this.props.video.username}</div>
                         <i className="fas fa-check-circle"></i>
                         {this.updateVideoButton()}

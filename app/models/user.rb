@@ -25,6 +25,11 @@ class User < ApplicationRecord
         foreign_key: :uploader_id,
         class_name: :Video
 
+    has_many :comments,
+        primary_key: :id,
+        foreign_key: :author_id,
+        class_name: :Comment
+
     attr_reader :password
 
     def self.find_by_credentials(email, password)

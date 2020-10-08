@@ -58,13 +58,7 @@
 .video-show-user {
     display: flex;
     align-items: center;
-    margin: 17px 0px;
-}
-
-.video-show-user .far {
-    color: orangered;
-    font-size: 40px;
-    margin-right: 20px;
+    margin: 17px 0px 8px 0px;
 }
 
 .video-show-user div {
@@ -76,6 +70,12 @@
 .video-show-user .fas {
     font-size: 12px;
     color: rgb(101, 101, 214);
+}
+
+.video-show-user .video-show-user-left .fas {
+    color: orangered;
+    font-size: 40px;
+    margin-right: 15px;
 }
 
 .update-button {
