@@ -13,13 +13,12 @@ class CommentIndexItem extends React.Component {
 
     render() {
         // let commenterIcon;
-        // if (this.)
 
         return (
             <div className="video-comment-index-item">
                 <div className="video-comment-index-item-icon">Profile Icon</div>
                 <div className="video-comment-index-item-info">
-                    <div>Username</div>
+                    <div>{this.props.comment.author}</div>
                     <div>Date Created</div>
                     <div>{this.props.comment.body}</div>
                 </div>
