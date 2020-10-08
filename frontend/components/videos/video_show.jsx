@@ -47,7 +47,7 @@ class VideoShow extends React.Component {
         this.props.updateViews({
             id: this.props.video.id,
             views: this.props.video.views + 1
-        })
+        });
     }
 
     render() {
@@ -89,7 +89,7 @@ class VideoShow extends React.Component {
                         <div>{this.props.video.description}</div>
                     </div>
                     <div className="comment-index-container">
-                        <CommentIndexContainer />
+                        <CommentIndexContainer video={this.props.video}/>
                     </div>
                 </div>
                 <div className="video-show-side">

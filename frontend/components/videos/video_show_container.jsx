@@ -5,7 +5,8 @@ import { fetchVideo, fetchVideos, updateViews } from '../../actions/video_action
 const mSTP = (state, ownProps) => ({
     currentUser: state.entities.users[state.session.id],
     video: state.entities.videos[ownProps.match.params.videoId],
-    videos: state.entities.videos
+    videos: state.entities.videos,
+    ownProps: ownProps
 })
 
 const mDTP = dispatch => ({

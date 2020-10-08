@@ -72,9 +72,23 @@ class CommentIndex extends React.Component {
             setTimeout(() => { document.getElementById('comment-button-disable').disable = true }, 1);
         }
 
+        let commentNum;
+        if (this.props.comments.length === 1) {
+            commentNum = "Comment";
+        } else {
+            commentNum = "Comments"
+        }
+
+        let submitButton;
+        if (this.state.body.length > 0) {
+            submitButton = <button id="comment-button-disable" className={active} onClick={this.handleComment}>COMMENT</button>
+        } else {
+            submitButton = <button id="comment-button-disable" className={active} disabled>COMMENT</button>
+        }
+
         return(
             <div>
-                <div className="comments-length">{this.props.comments.length} Comments</div>
+                <div className="comments-length">{this.props.comments.length} {commentNum}</div>
                 <div className="create-comment-section">
                     {userIcon}
                     <div className="comment-input-buttons">
@@ -83,7 +97,7 @@ class CommentIndex extends React.Component {
                         </div>
                         <div className={`comment-buttons ${hide}`}>
                             <button className="comment-buttons-cancel" onClick={this.handleCancel}>CANCEL</button>
-                            <button id="comment-button-disable" className={active} onClick={this.handleComment}>COMMENT</button>
+                            {submitButton}
                         </div>
                     </div>
                 </div>

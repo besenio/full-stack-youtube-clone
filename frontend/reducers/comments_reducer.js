@@ -1,4 +1,4 @@
-import { RECEIVE_COMMENTS, RECEIVE_COMMENT, REMOVE_COMMENT } from '../actions/comment_actions'
+import { RECEIVE_COMMENT, REMOVE_COMMENT } from '../actions/comment_actions'
 import { RECEIVE_VIDEO } from '../actions/video_actions';
 
 const commentsReducer = (oldState = {}, action) => {
@@ -6,8 +6,6 @@ const commentsReducer = (oldState = {}, action) => {
    let nextState = Object.assign({}, oldState)
 
    switch(action.type) {
-      case RECEIVE_COMMENTS:
-         return action.comments;
       case RECEIVE_COMMENT:
          nextState[action.comment.id] = action.comment;
          return nextState;

@@ -7,7 +7,7 @@ class CommentIndexItem extends React.Component {
 
     render() {
         return (
-            <div>TESTING</div>
+            <div>{this.props.comment.body}</div>
         )
     }
 }

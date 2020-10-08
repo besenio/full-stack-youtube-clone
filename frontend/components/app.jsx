@@ -8,7 +8,8 @@ import SideNavbarContainer from "./side_navbar/side_navbar_container";
 import VideoIndexContainer from "./videos/video_index_container";
 import Modal from "./modal/modal_conatiner"
 import VideoShowContainer from './videos/video_show_container';
-import EditVideoFormContainer from "./videos/edit_video_form_container"
+import EditVideoFormContainer from "./videos/edit_video_form_container";
+import CommentIndexContainer from "./comments/comment_index_container";
 
 const App = () => (
     <div>
