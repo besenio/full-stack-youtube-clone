@@ -9,6 +9,7 @@ json.comments do
         json.set! comment.id do
             json.extract! comment, :id, :body, :author_id, :video_id
             json.author comment.user.username
+            json.createDate comment.created_at.strftime("%b %d, %Y")
         end
     end
 end

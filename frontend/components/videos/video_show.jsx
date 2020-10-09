@@ -48,7 +48,6 @@ class VideoShow extends React.Component {
             id: this.props.video.id,
             views: this.props.video.views + 1
         });
-        console.log(this.props.video)
     }
 
     render() {

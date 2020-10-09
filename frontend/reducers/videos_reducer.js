@@ -11,7 +11,7 @@ const videosReducer = (oldState = {}, action) => {
             nextState[action.video.id] = action.video;
             return nextState;
         case REMOVE_VIDEO:
-            delete nextState[action.video.id];
+            delete nextState[action.videoId];
             return nextState;
         default:
             return oldState;

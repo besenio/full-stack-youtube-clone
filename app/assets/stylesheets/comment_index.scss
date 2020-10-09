@@ -115,3 +115,66 @@
 .hidden {
    display: none;
 }
+
+.video-comment-index-item {
+   display: flex;
+   margin: 25px 0px;
+}
+
+.video-comment-index-item-icon {
+   margin: 0px 20px 0px 10px;
+   border: 1px solid rgb(151, 49, 151);
+   font-size: 25px;
+   border-radius: 25px;
+   width: 25px;
+   height: 25px;
+   text-align: center;
+   padding: 5px;
+   background-color: rgb(184, 30, 102);
+   color: white;
+}
+
+// .video-comment-index-item-info {
+//    justify-content: left;
+// }
+
+.video-comment-index-item-info-top {
+   display: flex;
+}
+
+.video-comment-index-item-info-top-01{
+   font-size: 13px;
+   font-weight: bold;
+}
+
+.video-comment-index-item-check {
+   font-size: 12px;
+   color: rgb(101, 101, 214);
+   margin-left: 3px;
+}
+
+.video-comment-index-item-info-top-02{
+   font-size: 13px;
+   color: grey;
+   margin-left: 5px;
+}
+
+.video-comment-body {
+   font-size: 13px;
+   margin-top: 10px;
+}
+
+.video-comment-index-item-delete {
+   color: grey;
+   cursor: pointer;
+   font-size: 13px;
+   margin-left: 15px;
+}
+
+.video-comment-index-item-delete span{
+   margin-left: 3px;
+}
+
+.video-comment-index-item-delete:hover {
+   color: red;
+}
