@@ -10,8 +10,8 @@ const likesReducer = (oldState = {}, action) => {
       case REMOVE_LIKE:
          return {};
       case RECEIVE_VIDEO:
-         if (action.video.like) {
-            return action.video.like;
+         if (action.video.userLike) {
+            return action.video.userLike;
          } else {
             return {}
          }

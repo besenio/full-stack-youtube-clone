@@ -3,8 +3,8 @@ json.extract! @video.uploader, :username
 json.videoUrl url_for(@video.video)
 json.thumbnailUrl url_for(@video.thumbnail)
 json.publishDate @video.created_at.strftime("%b %d, %Y")
-json.numLikes video.num_likes
-json.numDislikes video.num_dislikes
+json.numLikes @video.num_likes
+json.numDislikes @video.num_dislikes
 
 json.comments do
     @video.comments.each do |comment|

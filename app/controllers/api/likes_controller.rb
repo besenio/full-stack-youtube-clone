@@ -1,6 +1,6 @@
 class Api::LikesController < ApplicationController
 
-   before_action :require_logged_in, only: [:create, :update, :destroy]
+   before_action :require_signed_in!, only: [:create, :update, :destroy]
 
    def create
       @like = Like.new(like_params)
@@ -10,6 +10,7 @@ class Api::LikesController < ApplicationController
          render :show
       else
          render json: @like.errors.full_messages, status: 422
+      end
    end
 
    def update

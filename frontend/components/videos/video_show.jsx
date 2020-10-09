@@ -8,6 +8,7 @@ class VideoShow extends React.Component {
         super(props);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handlePlayVideo = this.handlePlayVideo.bind(this);
+        this.handleLikeVideo = this.handleLikeVideo.bind(this);
     }
 
     componentDidMount() {
@@ -50,6 +51,17 @@ class VideoShow extends React.Component {
         });
     }
 
+    handleLikeVideo() {
+        this.props.createLike({
+            video_id: this.props.video.id,
+            liked: true
+        })
+    }
+
+    handleDislikeVideo() {
+
+    }
+
     render() {
         if (!this.props.video) return null;
 
@@ -71,11 +83,11 @@ class VideoShow extends React.Component {
                             <div>{this.props.videos[this.props.match.params.videoId].publishDate}</div>
                         </div>
                         <div className="video-show-counts-right">
-                            <i className="fas fa-thumbs-up">
-                                <div>10k</div>
+                            <i className="fas fa-thumbs-up" onClick={this.handleLikeVideo}>
+                                <div className="video-like-count">{this.props.video.numLikes}</div>
                             </i>
                             <i className="fas fa-thumbs-down">
-                                <div>100</div>
+                                <div className="video-dislike-count">{this.props.video.numDislikes}</div>
                             </i>
                         </div>
                     </div>
