@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
     resources :videos, only: [:index, :create, :show, :update, :destroy]
     resources :comments, only: [:index, :create, :destroy]
+    resources :likes, only: [:create, :update, :destroy]
 
     patch 'videos/:id/views', to: 'videos#update_views'
   end
