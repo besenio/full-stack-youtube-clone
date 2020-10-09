@@ -109,6 +109,7 @@ class CommentIndex extends React.Component {
                                 key={comment.id}
                                 deleteComment={this.props.deleteComment}
                                 currentUser={this.props.currentUser}
+                                fetchVideo={this.props.fetchVideo}
                             />
                         ))
                     }

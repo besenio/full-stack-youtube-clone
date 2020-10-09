@@ -8,12 +8,13 @@ class CommentIndexItem extends React.Component {
     }
 
     handleDeleteComment() {
-        this.props.deleteComment(this.props.comment.id);
+        this.props.deleteComment(this.props.comment.id)
+            .then(() => this.props.fetchVideo(this.props.comment.video_id));
     }
 
     render() {
         let deleteOption;
-        if (this.props.currentUser.id === this.props.comment.author_id) {
+        if (this.props.currentUser && this.props.comment && this.props.currentUser.id === this.props.comment.author_id) {
             deleteOption =
                 <div className="video-comment-index-item-delete" onClick={this.handleDeleteComment}>
                     <i className="fas fa-trash"></i>
@@ -31,7 +32,7 @@ class CommentIndexItem extends React.Component {
                         <div className="video-comment-index-item-info-top-01">{this.props.comment.author}</div>
                         <div className="video-comment-index-item-check"><i className="fas fa-check-circle"></i></div>
                         <div className="video-comment-index-item-info-top-02">{this.props.comment.createDate}</div>
-                        {this.deleteOption}
+                        {deleteOption}
                     </div>
                     <div className="video-comment-body">{this.props.comment.body}</div>
                 </div>
