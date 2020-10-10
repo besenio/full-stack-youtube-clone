@@ -52,10 +52,29 @@ class VideoShow extends React.Component {
     }
 
     handleLikeVideo() {
-        this.props.createLike({
-            video_id: this.props.video.id,
-            liked: true
-        })
+        if (!this.props.currentUser) this.props.history.push('/login');
+        console.log(this.props.userLike)
+
+        // if (this.props.userLike.liked === undefined) {
+        //     this.props.createLike({
+        //         video_id: this.props.video.id,
+        //         liked: true
+        //     }).then(() => this.props.fetchVideo(this.props.match.params.videoId))
+        // } else {
+        //     if (this.props.userLike.liked === false) {
+        //         this.props.updateLike({
+        //             id: this.props.userLike.id,
+        //             video_id: this.props.video.id,
+        //             liked: true
+        //         }).then(() => this.props.fetchVideo(this.props.match.params.videoId))
+        //     } else {
+        //         this.props.deleteLike(this.props.userLike.id)
+        //             .then(() => this.props.fetchVideo(this.props.match.params.videoId))
+        //     }
+        // }
+
+        this.props.deleteLike(this.props.userLike.id)
+                    .then(() => this.props.fetchVideo(this.props.match.params.videoId))
     }
 
     handleDislikeVideo() {
