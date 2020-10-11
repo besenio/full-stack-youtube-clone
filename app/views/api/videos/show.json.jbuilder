@@ -15,3 +15,9 @@ json.comments do
         end
     end
 end
+
+if current_user
+    user_like = @video.likes.select { |like| current_user.id == like.user_id }[0]
+
+    json.userLike user_like
+end
