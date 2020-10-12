@@ -25,5 +25,5 @@ export const updateLike = like => dispatch => {
 
 export const deleteLike = likeId => dispatch => {
    return LikeAPIUtil.deleteLike(likeId)
-      .then(deletedLike => dispatch(deleteLike(deletedLike.id)))
+      .then(deletedLike => dispatch(removeLike(deletedLike.id)))
 }

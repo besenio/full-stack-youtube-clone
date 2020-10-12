@@ -16,7 +16,7 @@ class Api::LikesController < ApplicationController
    def update
       @like = Like.find(params[:id])
 
-      if @like.update_attributes(like_params_edit)
+      if @like.update_attributes(update_like_params)
          render :show
       else
          render json: @like.errors.full_messages, status: 422
@@ -27,7 +27,7 @@ class Api::LikesController < ApplicationController
       @like = Like.find(params[:id])
 
       @like.destroy
-      render :show
+      render json: {}
    end
 
    private

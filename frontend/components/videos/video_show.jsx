@@ -9,6 +9,7 @@ class VideoShow extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handlePlayVideo = this.handlePlayVideo.bind(this);
         this.handleLikeVideo = this.handleLikeVideo.bind(this);
+        this.handleDislikeVideo = this.handleDislikeVideo.bind(this);
     }
 
     componentDidMount() {
@@ -74,11 +75,41 @@ class VideoShow extends React.Component {
     }
 
     handleDislikeVideo() {
+        if (!this.props.currentUser) this.props.history.push('/login');
 
+        if (this.props.userLike.liked === undefined) {
+            this.props.createLike({
+                video_id: this.props.video.id,
+                liked: false
+            }).then(() => this.props.fetchVideo(this.props.match.params.videoId))
+        } else {
+            if (this.props.userLike.liked === true) {
+                this.props.updateLike({
+                    id: this.props.userLike.id,
+                    video_id: this.props.video.id,
+                    liked: false
+                }).then(() => this.props.fetchVideo(this.props.match.params.videoId))
+            } else {
+                this.props.deleteLike(this.props.userLike.id)
+                    .then(() => this.props.fetchVideo(this.props.match.params.videoId))
+            }
+        }
     }
 
     render() {
         if (!this.props.video) return null;
+
+        let vidLike;
+        let vidDislike;
+        if (this.props.userLike.liked !== undefined) {
+            if (this.props.userLike.liked) {
+                vidLike = "vidLikeActive",
+                vidDislike = ""
+            } else {
+                vidLike = "",
+                vidDislike = "vidDislikeActive"
+            }
+        }
 
         return (
             <div className="video-show-greater">
@@ -98,12 +129,16 @@ class VideoShow extends React.Component {
                             <div>{this.props.videos[this.props.match.params.videoId].publishDate}</div>
                         </div>
                         <div className="video-show-counts-right">
-                            <i className="fas fa-thumbs-up" onClick={this.handleLikeVideo}>
-                                <div className="video-like-count">{this.props.video.numLikes}</div>
-                            </i>
-                            <i className="fas fa-thumbs-down">
-                                <div className="video-dislike-count">{this.props.video.numDislikes}</div>
-                            </i>
+                            <div className={vidLike}>
+                                <i className="fas fa-thumbs-up" onClick={this.handleLikeVideo}>
+                                    <div className="video-like-count">{this.props.video.numLikes}</div>
+                                </i>
+                            </div>
+                            <div className={vidDislike}>
+                                <i className="fas fa-thumbs-down" onClick={this.handleDislikeVideo}>
+                                    <div className="video-dislike-count">{this.props.video.numDislikes}</div>
+                                </i>
+                            </div>
                         </div>
                     </div>
                     <div className="video-show-user">
