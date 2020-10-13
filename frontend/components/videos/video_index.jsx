@@ -15,15 +15,15 @@ class VideoIndex extends React.Component {
                         <i className="fas fa-home"></i>
                         <div>Home</div>
                     </Link>
-                    <a href="https://github.com/" className="video-index-github">
+                    <a href="https://github.com/besenio" className="video-index-github">
                         <i className="fab fa-github"></i>
                         <div>Github</div>
                     </a>
-                    <a href="https://www.linkedin.com/" className="video-index-linkedin">
+                    <a href="https://www.linkedin.com/in/kevin-besenio-79905a1b7/" className="video-index-linkedin">
                         <i className="fab fa-linkedin"></i>
                         <div>LinkedIn</div>
                     </a>
-                    <a href="https://angel.co/" className="video-index-angellist">
+                    <a href="https://angel.co/u/besenio" className="video-index-angellist">
                         <i className="fab fa-angellist"></i>
                         <div>AngelList</div>
                     </a>
