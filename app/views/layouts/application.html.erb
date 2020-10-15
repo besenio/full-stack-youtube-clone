@@ -2,9 +2,9 @@
 <html>
   <head>
     <title>ViewTube</title>
-    <% favicon_link_tag asset_path('favicon.png') %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <link rel="shortcut icon" type="image/png" href="<%= image_url('favicon.png') %>" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" type="text/css">
     <script src="https://kit.fontawesome.com/15006fe439.js" crossorigin="anonymous"></script>
     <%= stylesheet_link_tag    'application', media: 'all' %>
