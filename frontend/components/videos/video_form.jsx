@@ -30,7 +30,7 @@ class VideoForm extends React.Component {
             formData.append('video[thumbnail]', this.state.thumbnailFile);
         }
         this.props.createVideo(formData)
-            .then(() => this.setState({ loading: true }))
+        this.setState({ loading: true })
     };
 
     handleTitleInput(e) {
@@ -67,8 +67,8 @@ class VideoForm extends React.Component {
         const previewThumbnail = this.state.thumbnailUrl ? <img src={this.state.thumbnailUrl} /> : null;
 
         let loaded;
-        if (this.props.loading) {
-            loaded = <div className="video-uploaded">Video Uploaded</div>
+        if (this.state.loading) {
+            loaded = <div className="video-uploaded">Video uploaded! It will appear in the splash page shortly...</div>
         }
 
         return (
