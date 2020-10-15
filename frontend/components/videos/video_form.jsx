@@ -4,6 +4,7 @@ class VideoForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = this.props.video;
+        this.state.loading = false;
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleTitleInput = this.handleTitleInput.bind(this);
         this.handleDescriptionInput = this.handleDescriptionInput.bind(this);
