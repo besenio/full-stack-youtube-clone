@@ -19,7 +19,7 @@ class VideoIndex extends React.Component {
                         <i className="fab fa-github"></i>
                         <div>Github</div>
                     </a>
-                    <a href="https://www.linkedin.com/in/kevin-besenio-79905a1b7/" className="video-index-linkedin">
+                    <a href="https://www.linkedin.com/in/kevin-besenio/" className="video-index-linkedin">
                         <i className="fab fa-linkedin"></i>
                         <div>LinkedIn</div>
                     </a>

@@ -34,7 +34,7 @@ class SideNavbar extends React.Component {
                         <i className="fab fa-github"></i>
                         <div>Github</div>
                     </a>
-                    <a href="https://www.linkedin.com/in/kevin-besenio-79905a1b7/" className="side-navbar-linkedin">
+                    <a href="https://www.linkedin.com/in/kevin-besenio/" className="side-navbar-linkedin">
                         <i className="fab fa-linkedin"></i>
                         <div>LinkedIn</div>
                     </a>

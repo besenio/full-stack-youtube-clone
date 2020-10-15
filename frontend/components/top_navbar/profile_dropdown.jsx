@@ -58,7 +58,7 @@ class ProfileDropdown extends React.Component {
             </div>
 
             <div className="dropdown-linkedin">
-               <a href="https://www.linkedin.com/in/kevin-besenio-79905a1b7/" className="side-navbar-linkedin">
+               <a href="https://www.linkedin.com/in/kevin-besenio/" className="side-navbar-linkedin">
                   <i className="fab fa-linkedin"></i>
                   <div>LinkedIn</div>
                </a>
