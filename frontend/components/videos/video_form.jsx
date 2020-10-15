@@ -28,7 +28,8 @@ class VideoForm extends React.Component {
         if (this.state.thumbnailFile) {
             formData.append('video[thumbnail]', this.state.thumbnailFile);
         }
-        this.props.createVideo(formData);
+        this.props.createVideo(formData)
+            .then(() => this.props.history.push('/'));
     };
 
     handleTitleInput(e) {
