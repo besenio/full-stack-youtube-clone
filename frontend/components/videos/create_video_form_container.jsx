@@ -14,7 +14,8 @@ const mSTP = state => ({
     },
     formType: 'Create Video',
     currentUser: state.entities.users[state.session.id],
-    errors: state.errors.videoErrors
+    errors: state.errors.videoErrors,
+    loading: false
 });
 
 const mDTP = dispatch => ({

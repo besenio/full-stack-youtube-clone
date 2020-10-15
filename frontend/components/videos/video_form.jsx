@@ -28,8 +28,8 @@ class VideoForm extends React.Component {
         if (this.state.thumbnailFile) {
             formData.append('video[thumbnail]', this.state.thumbnailFile);
         }
-        this.props.createVideo(formData)
-            .then(() => this.props.history.push('/'));
+        this.props.createVideo(formData);
+        this.props.loading === true;
     };
 
     handleTitleInput(e) {
@@ -65,6 +65,11 @@ class VideoForm extends React.Component {
     render() {
         const previewThumbnail = this.state.thumbnailUrl ? <img src={this.state.thumbnailUrl} /> : null;
 
+        let loaded;
+        if (this.props.loading) {
+            loaded = <div>Video Uploaded</div>
+        }
+
         return (
             <div className="create-video-form">
                 <div className="create-video-form-header">
@@ -86,6 +91,7 @@ class VideoForm extends React.Component {
                         <div>Description</div>
                         <textarea type="text" onChange={this.handleDescriptionInput} placeholder="Tell viewers about your video"/>
                         <input type="submit" onClick={this.handleSubmit} value="Upload" className="create-upload-button"/>
+                        {loaded}
                     </div>
                 </div>
             </div>
