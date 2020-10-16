@@ -47,6 +47,10 @@
     justify-content: center;
 }
 
+.navbar-center-bar input {
+    width: 400px;
+}
+
 .top-navbar-center input {
     border: 1px solid lightgrey;
     flex: 1;
@@ -63,11 +67,16 @@
     color: grey;
     background-color: rgb(231, 228, 228);
     border: 1px solid lightgrey;
-    height: 15px;
+    height: 33px;
     width: 50px;
     text-align: center;
     padding: 10px 0;
     cursor: pointer;
+    outline: none !important;
+}
+
+.fa-search:before {
+    margin: 0px 0px 0px 17px;
 }
 
 .top-navbar-right {
