@@ -1,6 +1,6 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
-import { AuthRoute, ProtectedRoute } from "../util/route_util";
+import { AuthRoute } from "../util/route_util";
 import LogInFormContainer from "./session/login_form_container";
 import SignUpFormContainer from "./session/signup_form_container";
 import TopNavbarContainer from "./top_navbar/top_navbar_container";

@@ -3,25 +3,33 @@ import VideoIndexItem from '../videos/video_index_item';
 import { Link } from 'react-router-dom';
 
 class SearchVideoIndex extends React.Component {
-   constructor(props) {
-      super(props);
-   }
+    constructor(props) {
+        super(props);
+    }
 
-   componentDidMount() {
-      this.props.fetchVideos(this.props.match.params.query);
-      window.scrollTo(0, 0);
-   }
+    componentDidMount() {
+        this.props.fetchVideos(this.props.match.params.query);
+        window.scrollTo(0, 0);
+    }
 
-   componentDidUpdate(prevProps) {
-      if (prevProps.query && prevProps.query != this.props.match.params.query) {
-         this.props.fetchVideos(this.props.match.params.query);
-         window.scrollTo(0, 0);
-      }
-   }
+    componentDidUpdate(prevProps) {
+        if (prevProps.query && prevProps.query != this.props.match.params.query) {
+            this.props.fetchVideos(this.props.match.params.query);
+            window.scrollTo(0, 0);
+        }
+    }
 
-   render() {
-      return(
-         <div className="videos-index">
+    render() {
+
+        let vidResults;
+        if (this.props.videos.length === 0) {
+            vidResults = "No Results"
+        } else {
+            vidResults = "Search Results"
+        }
+
+        return(
+            <div className="videos-index">
                 <div className="video-index-sidebar">
                     <Link to='/' className="video-index-home">
                         <i className="fas fa-home"></i>
@@ -41,7 +49,7 @@ class SearchVideoIndex extends React.Component {
                     </a>
                 </div>
                 <div className="video-index-main">
-                    <h1>Search Results</h1>
+                    <h1>{vidResults}</h1>
                     <ul className="videos-all">
                         {
                             this.props.videos.map(video => (
@@ -51,8 +59,8 @@ class SearchVideoIndex extends React.Component {
                     </ul>
                 </div>
             </div>
-      )
-   }
+        )
+    }
 }
 
 export default SearchVideoIndex;
