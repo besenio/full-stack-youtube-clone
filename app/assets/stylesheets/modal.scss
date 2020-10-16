@@ -130,3 +130,13 @@
 .video-uploaded {
     color: rgb(0, 81, 255);
 }
+
+.create-video-form-body-right .create-upload-button-disabled {
+    border: none;
+    background: lightgrey;
+    color: white;
+    border-radius: 3px;
+    padding: 10px 25px 25px 25px;
+    font-weight: 600;
+    width: 20%;
+}

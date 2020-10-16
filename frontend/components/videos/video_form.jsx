@@ -66,9 +66,14 @@ class VideoForm extends React.Component {
     render() {
         const previewThumbnail = this.state.thumbnailUrl ? <img src={this.state.thumbnailUrl} /> : null;
 
+        let uploadButton;
         let loaded;
         if (this.state.loading) {
+            uploadButton = <input type="submit" value="Upload" className="create-upload-button-disabled" disabled/>
             loaded = <div className="video-uploaded">Video uploaded! It will appear in the splash page shortly...</div>
+        } else {
+            uploadButton = <input type="submit" onClick={this.handleSubmit} value="Upload" className="create-upload-button"/>
+            loaded = <div></div>
         }
 
         return (
@@ -91,7 +96,7 @@ class VideoForm extends React.Component {
                         <input type="text" onChange={this.handleTitleInput} placeholder="Add a title that describes your video"/>
                         <div>Description</div>
                         <textarea type="text" onChange={this.handleDescriptionInput} placeholder="Tell viewers about your video"/>
-                        <input type="submit" onClick={this.handleSubmit} value="Upload" className="create-upload-button"/>
+                        {uploadButton}
                         {loaded}
                     </div>
                 </div>
