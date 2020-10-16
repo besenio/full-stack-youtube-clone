@@ -6,10 +6,24 @@ class TopNavbar extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            showDropdown: false
+            showDropdown: false,
+            search: ""
         }
         this.submit = this.submit.bind(this);
         this.handleDropdown = this.handleDropdown.bind(this);
+        this.handleInput = this.handleInput.bind(this);
+        this.handleSearch = this.handleSearch.bind(this);
+    }
+
+    handleInput(e) {
+        this.setState({ search: e.currentTarget.value });
+    }
+
+    handleSearch() {
+        if (this.state.search !== "") {
+            this.props.history.push(`/search/${this.state.search}`);
+        }
+        this.setState({ search: "" });
     }
 
     submit() {
@@ -43,6 +57,8 @@ class TopNavbar extends React.Component {
         </div>)
     )}
 
+
+
     render() {
         return (
             <div className="top-navbar">
@@ -56,8 +72,12 @@ class TopNavbar extends React.Component {
                     </Link>
                 </div>
                 <div className="top-navbar-center">
-                    <input type="text" placeholder="Search"/>
-                    <i className="fas fa-search"></i>
+                    <form className="navbar-center-bar" onSubmit={this.handleSearch}>
+                        <input type="text" placeholder="Search" onChange={this.handleInput} value={this.state.search}/>
+                    </form>
+                    <button className="navbar-center-button" onClick={this.handleSearch}>
+                        <i className="fas fa-search"></i>
+                    </button>
                 </div>
                 <div className="top-navbar-right">
                     <div className="top-navbar-video">

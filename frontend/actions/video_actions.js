@@ -30,8 +30,8 @@ export const clearVideoErrors = () => ({
     type: CLEAR_VIDEO_ERRORS
 });
 
-export const fetchVideos = () => dispatch => {
-    return VideoAPIUtil.fetchVideos()
+export const fetchVideos = query => dispatch => {
+    return VideoAPIUtil.fetchVideos(query)
         .then(videos => dispatch(receiveVideos(videos)))
 };
 
