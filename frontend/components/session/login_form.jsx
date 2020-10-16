@@ -75,7 +75,7 @@ class LoginForm extends React.Component {
                             <br/>
                             <p className="login-form-errors">{this.handleErrors()}</p>
                             <div>
-                                <Link to="/">Forgot credentials?</Link>
+                                <Link to="/">Return to Home Page</Link>
                             </div>
                         </div>
                         <div className="login-form-demo">

@@ -1,8 +1,5 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
-import { AuthRoute } from "../util/route_util";
-import LogInFormContainer from "./session/login_form_container";
-import SignUpFormContainer from "./session/signup_form_container";
 import TopNavbarContainer from "./top_navbar/top_navbar_container";
 import SideNavbarContainer from "./side_navbar/side_navbar_container";
 import VideoIndexContainer from "./videos/video_index_container";
@@ -21,8 +18,6 @@ const App = () => (
             <Route exact path="/edit/:videoId" component={EditVideoFormContainer}/>
             <Route exact path="/videos/:videoId" component={VideoShowContainer} />
             <Route exact path='/search/:query' component={SearchVideoIndexContainer} />
-            <AuthRoute exact path="/login" component={LogInFormContainer} />
-            <AuthRoute exact path="/signup" component={SignUpFormContainer} />
         </Switch>
     </div>
 );
