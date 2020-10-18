@@ -1,7 +1,5 @@
-[Live App](https://kb-viewtube.herokuapp.com/)
-
 # Introduction
-ViewTube is a video sharing platform for users to express and share themselves. Whether it’s through uploading a video, liking content, or voicing their opinions through comments, ViewTube promotes individuality and user interactions.
+[ViewTube](https://kb-viewtube.herokuapp.com/) is a video sharing platform for users to express and share themselves. Whether it’s through uploading a video, liking content, or voicing their opinions through comments, ViewTube promotes individuality and user interactions.
 
 # Technologies
 -	Ruby on Rails – backend application, utilizing models and controllers
