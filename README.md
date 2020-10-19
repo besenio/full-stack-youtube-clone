@@ -1,8 +1,12 @@
-<div>
-   <img src="./app/assets/images/logo.png">
+<h1 align="center">ViewTube</h1>
+
+<div align="center">
+   <a href="https://kb-viewtube.herokuapp.com/">
+      <img src="./app/assets/images/logo.png">
+   </a>
 </div>
 
-# ViewTube
+# Introduction
 [ViewTube](https://kb-viewtube.herokuapp.com/) is a video sharing platform for users to express and share themselves. Whether it’s through uploading a video, liking content, or voicing their opinions through comments, ViewTube promotes individuality and user interactions.
 
 # Technologies
