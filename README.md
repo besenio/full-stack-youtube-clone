@@ -13,11 +13,11 @@
 </div>
 
 # Table of Contents
-* <a href="#introduction">Introduction</a>
-* <a href="#technologies">Technologies</a>
-* <a href="#features">Features</a>
-* <a href="#challenges">Challenges</a>
-* <a href="#futurefeatures">Future Features</a>
+<a href="#introduction">Introduction</a>
+<a href="#technologies">Technologies</a>
+<a href="#features">Features</a>
+<a href="#challenges">Challenges</a>
+<a href="#futurefeatures">Future Features</a>
 
 <div id="introduction"></div>
 
@@ -42,11 +42,11 @@
 -  Video create or delete comment
 -  Video search
 
-Video upload
+<h3>Video upload</h3>
 
 <img src="./app/assets/images/view-tube-video-upload.png">
 
-Video like or dislike
+<h3>Video like or dislike</h3>
 
 ```javascript
 handleLikeVideo() {
@@ -72,7 +72,7 @@ handleLikeVideo() {
     }
 ```
 
-Video search
+<h3>Video search</h3>
 
 <img src="./app/assets/images/view-tube-search-bar.png">
 
