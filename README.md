@@ -16,7 +16,6 @@
 * <a href="#introduction">Introduction</a>
 * <a href="#technologies">Technologies</a>
 * <a href="#features">Features</a>
-* <a href="#challenges">Challenges</a>
 * <a href="#futurefeatures">Future Features</a>
 
 <div id="introduction"></div>
@@ -74,18 +73,13 @@ handleLikeVideo() {
 
 <img src="./app/assets/images/view-tube-video-show-page.png">
 
-- A user can comment on any video as long as the user is logged in. The username and publish date will accompany the comment whenever a comment is created. Only the creator of the comment will have the ability to delete the comment.
+- A user can comment on any video as long as the user is logged in. The username and publish date will accompany the comment whenever a comment is created. Only the creator of the comment will have the ability to delete the orginal comment.
 
 <h3>Video search</h3>
 
 <img src="./app/assets/images/view-tube-search-bar.png">
 
-- Users can search the library of videos via the search bar in the header. The search functionality is based on the videos title.
-
-<div id="challenges"></div>
-
-# Challenges
--	The implementation of user authentication through React-Redux was quite cumbersome. There are a lot of moving parts to keep track of who is logged in to who can have access to certain routes on the website. To start off, we would need a couple of reducers, one to identify if the user is logged in or logged out and two others to keep track of user sign up or sign in errors. Then, we would need to have asynchronous and synchronous action creators, along with API functions that make the actual AJAX requests. Thunk middleware is involved to handle the asynchronous actions. Furthermore, “Protected” (renders components if a user is logged in) and “Auth” (renders components if a user is logged out) routes are implemented along with bootstrapping.
+- Users can search the library of videos via the search bar in the header. The search functionality is based on the videos' title.
 
 <div id="futurefeatures"></div>
 
