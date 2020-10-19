@@ -68,13 +68,19 @@ handleLikeVideo() {
     }
 ```
 
+- The snippet above is the code block for liking a video (clicking the thumbs up). The first line of the function will push the user to log in if he or she hasn't already done so. The second if statement fires if the user is logged in and if the video isn't already liked or disliked; if that is the case, the "createLike" prop will initate and the video will be liked. However, if the video is already disliked, the "updateLike" prop will take action and will like the video instead of disliking it. In the case where the video is already liked and the user chooses to click on the thumbs up, the "deleteLike" prop will fire and the video will no longer be liked. The same logic is applied for disliking (clicking the thumbs down) a video.
+
 <h3>Video comment</h3>
 
 <img src="./app/assets/images/view-tube-video-show-page.png">
 
+- A user can comment on any video as long as the user is logged in. The username and publish date will accompany the comment whenever a comment is created. Only the creator of the comment will have the ability to delete the comment.
+
 <h3>Video search</h3>
 
 <img src="./app/assets/images/view-tube-search-bar.png">
+
+- Users can search the library of videos via the search bar in the header. The search functionality is based on the videos title.
 
 <div id="challenges"></div>
 
