@@ -21,11 +21,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const root = document.getElementById('root');
 
-    //For testing
-    window.signup = APIUtil.signup;
-    window.login = APIUtil.login;
-    window.logout = APIUtil.logout;
-    window.getState = store.getState;
+    // window.signup = APIUtil.signup;
+    // window.login = APIUtil.login;
+    // window.logout = APIUtil.logout;
+    // window.getState = store.getState;
 
     ReactDOM.render(<Root store={store}/>, root);
 });

@@ -169,16 +169,7 @@ const videoShow = (props) => {
         props.fetchVideos();
         props.fetchVideo(props.match.params.videoId);
         window.scrollTo(0, 0);
-    }, []);
-    
-    const prevProps = useRef();
-
-    useEffect(() => {
-        if (prevProps.video && prevProps.video.id != props.match.params.videoId) {
-            props.fetchVideo(props.match.params.videoId);
-            window.scrollTo(0, 0);
-        }
-    }, []);
+    }, [props.match.params.videoId]);
     
     const updateVideoButton = () => {
         let updateButton;
