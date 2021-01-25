@@ -1,51 +1,40 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
-class EditVideoForm extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = this.props.video;
-        this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleTitleInput = this.handleTitleInput.bind(this);
-        this.handleDescriptionInput = this.handleDescriptionInput.bind(this);
-        this.handleDelete = this.handleDelete.bind(this);
-        this.handleCancel = this.handleCancel.bind(this);
-    }
+const editVideoForm = (props) => {
+    const [video, setVideo] = useState(props.video);
 
-    componentDidMount() {
-        this.props.fetchVideo(this.props.match.params.videoId)
-    }
+    useEffect(() => {
+        props.fetchVideo(props.match.params.videoId)
+    }, []);
 
-    handleSubmit(e) {
+    const handleSubmit = (e) => {
         e.preventDefault();
         const formData = new FormData();
-        formData.append('video[id]', this.props.match.params.videoId)
-        formData.append('video[title]', this.state.title);
-        formData.append('video[description]', this.state.description);
-        this.props.updateVideo(formData)
-            .then(() => this.props.history.push(`/videos/${this.props.video.id}`));
+        formData.append('video[id]', props.match.params.videoId)
+        formData.append('video[title]', video.title);
+        formData.append('video[description]', video.description);
+        props.updateVideo(formData)
+            .then(() => props.history.push(`/videos/${props.video.id}`));
     };
 
-    handleTitleInput(e) {
-        this.setState({ title: e.currentTarget.value });
+    const handleTitleInput = (e) => {
+        setVideo({...video, title: e.currentTarget.value});
     };
 
-    handleDescriptionInput(e) {
-        this.setState({ description: e.currentTarget.value });
+    const handleDescriptionInput = (e) => {
+        setVideo({...video, description: e.currentTarget.value});
     };
 
-    handleDelete(e) {
-        this.props.deleteVideo(this.props.match.params.videoId);
-        this.props.history.push('/');
+    const handleDelete = () => {
+        props.deleteVideo(props.match.params.videoId);
+        props.history.push('/');
     };
 
-    handleCancel() {
-        this.props.history.push(`/videos/${this.props.video.id}`);
+    const handleCancel = () => {
+        props.history.push(`/videos/${props.video.id}`);
     };
 
-    render() {
-        if (this.props.video) {
-
-        
+    if (props.video) {
         return (
             <div className="edit-video-form">
                 <div className="edit-video-form-header">
@@ -53,30 +42,28 @@ class EditVideoForm extends React.Component {
                 </div>
                 <div className="edit-video-form-body">
                     <div className="edit-video-form-left">
-                        <h2>{this.props.video.title}</h2>
-                        <img src={this.props.video.thumbnailUrl} width="350" height="250" />
+                        <h2>{props.video.title}</h2>
+                        <img src={props.video.thumbnailUrl} width="350" height="250" />
                     </div>
                     <div className="edit-video-form-right">
                         <label className="edit-video-form-title">Title:
-                            <input type="text" onChange={this.handleTitleInput} placeholder="Add a title that describes your video"/>
+                            <input type="text" onChange={handleTitleInput} value={video.title} placeholder="Add a title that describes your video"/>
                         </label>
                         <label className="edit-video-form-description">Description:
-                            <textarea type="text" onChange={this.handleDescriptionInput} placeholder="Tell viewers about your video"/>
+                            <textarea type="text" onChange={handleDescriptionInput} value={video.description} placeholder="Tell viewers about your video"/>
                         </label>
                         <div className="edit-video-form-bottom-right">
-                            <input type="submit" onClick={this.handleSubmit} value="Update"></input>
-                            <input type="submit" onClick={this.handleDelete} value="Delete Video"/>
-                            <input type="submit" onClick={this.handleCancel} value="Cancel"/>
+                            <input type="submit" onClick={handleSubmit} value="Update"></input>
+                            <input type="submit" onClick={handleDelete} value="Delete Video"/>
+                            <input type="submit" onClick={handleCancel} value="Cancel"/>
                         </div>
                     </div>
                 </div>
             </div>
         )
-
-        } else {
-            return null;
-        }
+    } else {
+        return null;
     }
-}
+};
 
-export default EditVideoForm;
+export default editVideoForm;
