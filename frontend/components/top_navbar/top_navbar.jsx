@@ -87,12 +87,12 @@ class TopNavbar extends React.Component {
                             }}
                         ></i>
                     </div>
-                    {/* <div className="top-navbar-apps">
+                    <div className="top-navbar-apps">
                         <i className="fas fa-th"></i>
                     </div>
                     <div className="top-navbar-settings">
                         <i className="fas fa-ellipsis-v"></i>
-                    </div> */}
+                    </div>
                     <div className="top-navbar-profile">
                         <div>{this.display()}</div>
                     </div>
