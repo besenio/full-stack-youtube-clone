@@ -5,7 +5,7 @@ import VideoIndexItem from './video_index_item';
 const videoIndex = (props) => {
     useEffect(() => {
         props.fetchVideos();
-    }, []);
+    }, [props.videos.length]);
 
     return (
         <div className="videos-index">
