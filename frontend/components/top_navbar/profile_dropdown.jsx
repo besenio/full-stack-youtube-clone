@@ -5,9 +5,9 @@ const profileDropdown = (props) => {
    useEffect(() => {
       document.addEventListener('click', handleOutClick, false);
 
-      // return () => {
-      //    document.removeEventListener('click', handleOutClick, false);
-      // }
+      return () => {
+         document.removeEventListener('click', handleOutClick, false);
+      }
    }, [props.showDropdown]);
 
    const handleOutClick = (e) => {
