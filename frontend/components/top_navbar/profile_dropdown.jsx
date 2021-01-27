@@ -14,7 +14,7 @@ const profileDropdown = (props) => {
       let userIcon = document.getElementsByClassName('dropdown-greeting')[0];
       let dropdown = document.getElementsByClassName('dropdown')[0];
 
-      if (props.showDropdown && !userIcon.contains(e.target) && !dropdown.contains(e.target)) {
+      if (props.showDropdown && !userIcon.contains(e.currentTarget) && !dropdown.contains(e.currentTarget)) {
          props.handleDropdown();
       }
    }
