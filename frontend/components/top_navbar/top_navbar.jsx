@@ -86,7 +86,7 @@ const topNavbar = (props) => {
                 </div>
             </div>
         </div>
-    );
-};
+    )
+}
 
 export default topNavbar;

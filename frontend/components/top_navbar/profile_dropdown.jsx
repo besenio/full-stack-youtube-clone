@@ -8,7 +8,7 @@ const profileDropdown = (props) => {
       // return () => {
       //    document.removeEventListener('click', handleOutClick, false);
       // }
-   }, [props.showDropdown])
+   }, [props.showDropdown]);
 
    const handleOutClick = (e) => {
       let userIcon = document.getElementsByClassName('dropdown-greeting')[0];
@@ -16,7 +16,7 @@ const profileDropdown = (props) => {
 
       if (props.showDropdown && !userIcon.contains(e.target) && !dropdown.contains(e.target)) {
          props.handleDropdown();
-      };
+      }
    }
 
    let show;
