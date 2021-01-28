@@ -8,8 +8,8 @@ const videoIndexSide = (props) => {
         props.fetchVideos();
         setIncomingVideos(props.videos
             .filter(video => video.id !== props.parentVideoId)
-            .slice(0, 5)
             .sort((a, b) => 0.5 - Math.random())
+            .slice(0, 5)
         );
     }, [props.parentVideoId, props.videos.length]);
 
