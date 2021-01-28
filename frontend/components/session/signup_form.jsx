@@ -17,7 +17,6 @@ const signupForm = (props) => {
     const update = (field) => {
         return e => {
             setState({...state, [field]: e.currentTarget.value});
-            console.log(state)
         }
     }
 
