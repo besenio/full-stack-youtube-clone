@@ -1,41 +1,18 @@
 import React from 'react';
 import CreateVideoForm from '../videos/create_video_form_container';
-import EditVideoForm from '../videos/edit_video_form_container';
 
-class Modal extends React.Component {
+const modal = (props) => {
+    // props.modal ? document.body.style.overflow ='hidden' : document.body.style.overflow = 'unset';
 
-    componentDidUpdate() {
-        if (this.props.modal) {
-            document.body.style.overflow = 'hidden';
-        }
-        else {
-            document.body.style.overflow = 'unset';
-        }
-    }
+    if (!props.modal || !props.currentUser) return null;
 
-    render() {
-        const { modal, currentUser } = this.props;
-        if (!modal || !currentUser) return null;
-        let component;
-
-        switch (modal.type) {
-            case 'createVideo':
-                component = <CreateVideoForm />;
-                break;
-            case 'updateVideo':
-                component = <EditVideoForm />;
-            default:
-                component = null;
-        }
-
-        return (
-            <div className="modal-background" onClick={this.props.closeModal}>
-                <div className="modal-child" onClick={e => e.stopPropagation()}>
-                    { component }
-                </div>
+    return (
+        <div className="modal-background" onClick={props.closeModal}>
+            <div className="modal-child" onClick={e => e.stopPropagation()}>
+                <CreateVideoForm />
             </div>
-        );
-    }
-};
+        </div>
+    )
+}
 
-export default Modal;
+export default modal;

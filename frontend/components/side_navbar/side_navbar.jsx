@@ -16,12 +16,12 @@ const sideNavbar = (props) => {
                     <div className="side-navbar-menu">
                         <i className="fas fa-bars" onClick={props.closeSide}></i>
                     </div>
-                    <Link to="/" className="side-navbar-top-home">
+                    <Link to="/" className="side-navbar-top-home" onClick={props.closeSide}>
                         <i className="fab fa-youtube"></i>
                         <div>ViewTube</div>
                     </Link>
                 </div>
-                <Link to='/' className="side-navbar-home">
+                <Link to='/' className="side-navbar-home" onClick={props.closeSide}>
                     <i className="fas fa-home"></i>
                     <div>Home</div>
                 </Link>
