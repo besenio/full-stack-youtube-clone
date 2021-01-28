@@ -11,7 +11,7 @@ const videoIndexSide = (props) => {
             .slice(0, 5)
             .sort((a, b) => 0.5 - Math.random())
         );
-    }, [props.parentVideoId]);
+    }, [props.parentVideoId, props.videos.length]);
 
     return (
         <div className="videos-index">
