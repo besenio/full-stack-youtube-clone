@@ -137,7 +137,7 @@ const videoShow = (props) => {
                 </div>
             </div>
             <div className="video-show-side">
-                <VideoIndexSideContainer />
+                <VideoIndexSideContainer parentVideoId={props.video.id}/>
             </div>
         </div>
     )

@@ -1,10 +1,13 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import VideoIndexItem from './video_index_item';
 
 const videoIndex = (props) => {
+    const [incomingVideos, setIncomingVideos] = useState([]);
+
     useEffect(() => {
         props.fetchVideos();
+        setIncomingVideos(props.videos.sort((a, b) => 0.5 - Math.random()));
     }, [props.videos.length]);
 
     return (
@@ -31,7 +34,7 @@ const videoIndex = (props) => {
                 <h1>Recommended</h1>
                 <ul className="videos-all">
                     {
-                        props.videos.map(video => (
+                        incomingVideos.map(video => (
                             <VideoIndexItem video={video} key={video.id}/>
                         ))
                     }
